@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --primary: #893685;
+    --secondary: #ebebeb;
+    --green: #6ead15;
+    --orange: #e97d00;
+    --blue: #008dde;
+}
