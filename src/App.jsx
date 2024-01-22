@@ -1,12 +1,13 @@
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import RoutesComponent from './Routes';
 
 function App() {
-
   return (
-    <>
-      <h1 className='text-3xl text-center text-red-600'>Hola c15</h1>
-    </>
-  )
+    <Router>
+      <RoutesComponent />
+    </Router>
+  );
 }
 
-export default App
+export default App;
