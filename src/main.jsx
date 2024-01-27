@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import Pregunta from './Preg.jsx';
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -8,3 +9,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
+
+ReactDOM.createRoot(document.getElementById('preg')).render(
+  <React.StrictMode>
+    <Pregunta/>
+  </React.StrictMode>,
+)
+
