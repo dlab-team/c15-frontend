@@ -15,6 +15,7 @@ const RoutesComponent = () => {
         <Route path="/Diagnostico" element={<Diagnostico />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="Contacto" element={<Contacto />} />
+        {/* Aqui la ruta "/resultados" */}
       </Routes>
     </>
   );
