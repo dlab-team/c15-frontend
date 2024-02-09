@@ -10,3 +10,7 @@
     --orange: #e97d00;
     --blue: #008dde;
 }
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
