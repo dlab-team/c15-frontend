@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../assets/img/Logo.png'
 import { useState } from 'react'
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <div className='flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center'>
-        <div className='w-[200px] h-[50px] pl-5 flex' ><img src={Logo} alt="Logo-lofwork"/></div>
+        <NavLink to="/" className='w-[200px] h-[50px] pl-5 flex' ><img src={Logo} alt="Logo-lofwork"/></NavLink>
         <div className='flex justify-end items-center p-3 lg:hidden'><button onClick={() => setIsOpen(!isOpen)}><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-menu-2 text-[var(--primary)]" width="40" height="40" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg></button></div>
         {/*menu desktop */}
         <div className='hidden lg:flex w-[60%] justify-between items-center px-10'>
