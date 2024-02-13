@@ -8,5 +8,6 @@ export default {
       },
     },
   },
+  // Ayuda al manejo de estilos formularios
   plugins: [require('@tailwindcss/forms')],
 };

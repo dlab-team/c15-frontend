@@ -6,7 +6,7 @@
       {
         "question": {
           "id": 1,
-          "text": "¿Conoce las obligaciones tributarias de su empresa?"
+          "text": "1. ¿Conoce las obligaciones tributarias de su empresa?"
         },
         "options": [
           { "id": 1, "option": "Sí" },
@@ -17,7 +17,7 @@
       {
         "question": {
           "id": 2,
-          "text": "¿La empresa cumple con todas las obligaciones tributarias de manera oportuna?"
+          "text": "2. ¿La empresa cumple con todas las obligaciones tributarias de manera oportuna?"
         },
         "options": [
           { "id": 4, "option": "Sí, siempre" },
@@ -30,7 +30,7 @@
       {
         "question": {
           "id": 3,
-          "text": "¿Se realiza una planificación Tributaria efectiva para optimizar la carga impositiva?"
+          "text": "3. ¿Se realiza una planificación Tributaria efectiva para optimizar la carga impositiva?"
         },
         "options": [
           { "id": 7, "option": "Siempre estamos buscando oportunidades" },
@@ -49,7 +49,7 @@
       {
         "question": {
           "id": 4,
-          "text": "¿La empresa tiene una visión clara y definida a largo plazo?"
+          "text": "4. ¿La empresa tiene una visión clara y definida a largo plazo?"
         },
         "options": [
           { "id": 12, "option": "Totalmente clara" },
@@ -62,7 +62,7 @@
       {
         "question": {
           "id": 5,
-          "text": "¿Se lleva a cabo una planificación estratégica anual para alinear los objetivos con la visión?"
+          "text": "5. ¿Se lleva a cabo una planificación estratégica anual para alinear los objetivos con la visión?"
         },
         "options": [
           { "id": 17, "option": "Sí, de manera exhaustiva" },
@@ -75,7 +75,7 @@
       {
         "question": {
           "id": 6,
-          "text": "¿La planificación estratégica se comunica de manera efectiva a todos los niveles de la organización?"
+          "text": "6. ¿La planificación estratégica se comunica de manera efectiva a todos los niveles de la organización?"
         },
         "options": [
           {
@@ -109,7 +109,7 @@
       {
         "question": {
           "id": 7,
-          "text": "¿Se han identificado y establecido KPI relevantes para medir el rendimiento empresarial?"
+          "text": "7. ¿Se han identificado y establecido KPI relevantes para medir el rendimiento empresarial?"
         },
         "options": [
           {
@@ -137,7 +137,7 @@
       {
         "question": {
           "id": 8,
-          "text": "¿Los KPI se revisan y actualizan regularmente para adaptarse a cambios en el entorno empresarial?"
+          "text": "8. ¿Los KPI se revisan y actualizan regularmente para adaptarse a cambios en el entorno empresarial?"
         },
         "options": [
           {
@@ -165,7 +165,7 @@
       {
         "question": {
           "id": 9,
-          "text": "¿Existe un sistema de seguimiento claro para evaluar el cumplimiento de los KPI?"
+          "text": "9. ¿Existe un sistema de seguimiento claro para evaluar el cumplimiento de los KPI?"
         },
         "options": [
           {
@@ -199,7 +199,7 @@
       {
         "question": {
           "id": 10,
-          "text": "¿La empresa fomenta un ambiente de trabajo colaborativo y de apoyo entre los empleados?"
+          "text": "10. ¿La empresa fomenta un ambiente de trabajo colaborativo y de apoyo entre los empleados?"
         },
         "options": [
           {
@@ -227,7 +227,7 @@
       {
         "question": {
           "id": 11,
-          "text": "¿Se proporciona formación continua para el desarrollo profesional de los equipos?"
+          "text": "11. ¿Se proporciona formación continua para el desarrollo profesional de los equipos?"
         },
         "options": [
           {
@@ -255,7 +255,7 @@
       {
         "question": {
           "id": 12,
-          "text": "¿Existe un sistema efectivo de retroalimentación para mejorar el rendimiento del equipo?"
+          "text": "12. ¿Existe un sistema efectivo de retroalimentación para mejorar el rendimiento del equipo?"
         },
         "options": [
           {
@@ -289,7 +289,7 @@
       {
         "question": {
           "id": 13,
-          "text": "¿Existe un proceso de ventas definido y seguido por el equipo de ventas?"
+          "text": "13. ¿Existe un proceso de ventas definido y seguido por el equipo de ventas?"
         },
         "options": [
           {
@@ -317,7 +317,7 @@
       {
         "question": {
           "id": 14,
-          "text": "¿Se brinda capacitación y desarrollo continuo al equipo de ventas?"
+          "text": "14. ¿Se brinda capacitación y desarrollo continuo al equipo de ventas?"
         },
         "options": [
           {
@@ -345,7 +345,7 @@
       {
         "question": {
           "id": 15,
-          "text": "¿Se hacen seguimientos regulares y análisis de métricas para evaluar el desempeño de ventas?"
+          "text": "15. ¿Se hacen seguimientos regulares y análisis de métricas para evaluar el desempeño de ventas?"
         },
         "options": [
           {
@@ -374,12 +374,12 @@
   },
   {
     "pillar_id": 6,
-    "pillar_name": "MKT",
+    "pillar_name": "Marketing",
     "questions": [
       {
         "question": {
           "id": 16,
-          "text": "¿Tienes canales de Marketing Web - Redes Sociales?"
+          "text": "16. ¿Tienes canales de Marketing Web - Redes Sociales?"
         },
         "options": [
           {
@@ -395,7 +395,7 @@
       {
         "question": {
           "id": 17,
-          "text": "¿Cómo calificarías la efectividad de las estrategias de marketing de tu empresa?"
+          "text": "17. ¿Cómo calificarías la efectividad de las estrategias de marketing de tu empresa?"
         },
         "options": [
           {
@@ -423,7 +423,7 @@
       {
         "question": {
           "id": 18,
-          "text": "Obtienes prospectos a través de las campañas de marketing"
+          "text": "18. ¿Obtienes prospectos a través de las campañas de marketing?"
         },
         "options": [
           {
