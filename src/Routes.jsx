@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import Contacto from './Views/Contacto';
 import Diagnostico from './Views/Diagnostico';
 import Blog from './Views/Blog';
-import Login from './Views/Login'
+import Login from './Views/Login';
 import Registro from './Views/Registro';
 
 const RoutesComponent = () => {
