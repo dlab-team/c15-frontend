@@ -1,7 +1,7 @@
-import React from 'react';
-import Logo from '../assets/img/Logo.png';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import Logo from '../assets/img/Logo.png'
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center">
       <div className="w-[200px] h-[50px] pl-5 flex">
-        <img src={Logo} alt="Logo-lofwork" />
+        <NavLink to="/" className='w-[200px] h-[50px] pl-5 flex' ><img src={Logo} alt="Logo-lofwork"/></NavLink>
       </div>
       <div className="flex justify-end items-center p-3 lg:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
