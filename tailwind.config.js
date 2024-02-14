@@ -1,15 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      fontFamily:{
-        roboto:['Roboto', 'sans-serif']
-      }
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
-}
+  // Ayuda al manejo de estilos formularios
+  plugins: [require('@tailwindcss/forms')],
+};
