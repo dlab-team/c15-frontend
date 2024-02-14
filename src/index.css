@@ -9,6 +9,10 @@
   --green: #6ead15;
   --orange: #e97d00;
   --blue: #008dde;
+  --alto: rgba(137, 54, 133, 1);
+  --medio: rgba(137, 54, 133, 0.75);
+  --bajo: rgba(137, 54, 133, 0.3);
+  --muybajo: rgba(137, 54, 133, 0.2);
 }
 
 body {
