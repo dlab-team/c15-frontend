@@ -75,7 +75,7 @@ const FormRegister = () => {
                 <label className="text-center mt-2">Al registrarme acepto los <b>términos y condiciones</b></label>
                 <button
                     type="submit"
-                    className="mt-2 bg-[var(--green)] py-3 px-4 rounded-xl shadow-lg text-white font-medium hover:bg-green-700 hover:duration-300">
+                    className="mt-2 bg-[var(--green)] py-3 px-4 rounded-xl shadow-lg text-white font-medium hover:bg-green-700 hover:duration-300  md:w-[50%] md:mx-auto">
                     {
                         /*cargando ? "Validando datos..." :*/ "Registrarme"
                     }

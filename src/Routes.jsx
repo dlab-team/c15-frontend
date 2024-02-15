@@ -8,6 +8,7 @@ import Blog from './Views/Blog';
 import Login from './Views/Login';
 import Registro from './Views/Registro';
 import Resultado from './Views/Resultado';
+import RestablecerContrasena from './Views/RestablecerContrasena';
 
 const RoutesComponent = () => {
   return (
@@ -21,6 +22,7 @@ const RoutesComponent = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Resultado" element={<Resultado />} />
+        <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
       </Routes>
     </>
   );
