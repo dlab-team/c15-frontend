@@ -8,6 +8,7 @@ import Blog from './Views/Blog';
 import Login from './Views/Login';
 import Registro from './Views/Registro';
 import Resultado from './Views/Resultado';
+import Footer from './components/Footer'
 
 const RoutesComponent = () => {
   return (
@@ -22,6 +23,7 @@ const RoutesComponent = () => {
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Resultado" element={<Resultado />} />
       </Routes>
+      <Footer></Footer>
     </>
   );
 };
