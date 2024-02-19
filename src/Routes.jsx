@@ -8,12 +8,12 @@ import Blog from './Views/Blog';
 import Login from './Views/Login';
 import Registro from './Views/Registro';
 import Resultado from './Views/Resultado';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 
 const RoutesComponent = () => {
   return (
     <>
-      <Header> </Header>
+      <Header></Header>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Diagnostico" element={<Diagnostico />} />
