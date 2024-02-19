@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Pillar from './Pillar';
 import data from '../data/data.json';
+import { Link } from 'react-router-dom';
 
 const Diagnostic = () => {
   const [pillars, setPillars] = useState([]);
@@ -16,9 +17,11 @@ const Diagnostic = () => {
           <Pillar key={pillar.pillar_id} pillar={pillar} />
         ))}
       </div>
-      <button className="flex mx-auto mt-20 text-white text-sm font-black bg-[#6EAD15] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
-        enviar encuesta
-      </button>
+      <Link to="/Resultado">
+        <button className="flex mx-auto mt-20 text-white text-sm font-black bg-[#6EAD15] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
+          enviar encuest  a
+        </button>
+      </Link>
     </>
   );
 };
