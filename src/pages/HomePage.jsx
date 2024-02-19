@@ -1,7 +1,5 @@
 import React from "react";
 import Banner from "../assets/img/banner.png";
-
-import Footer from "../components/Footer";
 import SectionHome from "../components/SectionHome";
 
 function HomePage() {
@@ -63,7 +61,6 @@ function HomePage() {
         </p>
       </section>
       <SectionHome />
-      <Footer />
     </div>
   );
 }
