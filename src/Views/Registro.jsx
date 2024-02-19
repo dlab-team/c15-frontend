@@ -5,8 +5,7 @@ const Registro = () => {
     <>
       <div className="md:grid grid-cols-2">
         <div className="hidden h-[100%] md:flex md:items-center md:justify-center">
-          {/* <h1>Emprender ahora es + fácil, realizamos tu registro de empresa en un día, tenemos la mejor oficina virtual Lofwork, administramos tu contabilidad y más.</h1> */}
-        <img src="assets\img\texto-register.png" alt="" />
+          <h1 className="text-3xl leading-loose w-[60%] text-center">Emprender ahora es + fácil, realizamos tu registro de empresa en un día, <b className="text-[var(--primary)]">tenemos la mejor oficina virtual Lofwork, </b>administramos tu contabilidad y más.</h1>
         </div>
         <div className="flex flex-col w-[90%] mx-auto">
           <div className="flex flex-col gap-3">
