@@ -93,7 +93,7 @@ const Header = () => {
             <path d="M9 6l6 6l-6 6" />
           </svg>
         </Link>
-        <Link to="/Contacto" className="flex text-[var(--primary)] font-black">
+        <Link to="mailto:contacto@lofwork.cl" className="flex text-[var(--primary)] font-black">
           Contacto{' '}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -219,7 +219,7 @@ const Header = () => {
             </svg>
           </Link>
           <Link
-            to="/Contacto"
+            to="mailto:contacto@lofwork.cl"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
           >
             Contacto{' '}
@@ -241,10 +241,10 @@ const Header = () => {
           </Link>
         </div>
         <div className="w-[100%] flex flex-col items-center mt-10 gap-3">
-          <Link className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]">
+          <Link to="/Login" className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]">
             Login
           </Link>
-          <Link className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--primary)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white">
+          <Link to="/Registro" className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--primary)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white">
             Registrate
           </Link>
         </div>
