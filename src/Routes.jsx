@@ -9,11 +9,12 @@ import Login from './Views/Login';
 import Registro from './Views/Registro';
 import Resultado from './Views/Resultado';
 import RestablecerContrasena from './Views/RestablecerContrasena';
+import Footer from './components/Footer';
 
 const RoutesComponent = () => {
   return (
     <>
-      <Header> </Header>
+      <Header></Header>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Diagnostico" element={<Diagnostico />} />
@@ -24,6 +25,7 @@ const RoutesComponent = () => {
         <Route path="/Resultado" element={<Resultado />} />
         <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
       </Routes>
+      <Footer></Footer>
     </>
   );
 };

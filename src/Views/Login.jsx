@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
-    <main className='flex container h-[60vh]'>
+    <main className='flex container'>
       <div className='w-[50%] hidden lg:flex lg:justify-center lg:items-center' >
         <p className='text-3xl leading-loose w-[60%] text-center'>Contesta nuestro cuestionario para entregarte un <span className='text-[var(--primary)]'>diagnóstico de tu emprendimiento</span>, de manera gratuita </p>
       </div>
