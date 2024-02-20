@@ -19,7 +19,7 @@ const Diagnostic = () => {
       </div>
       <Link to="/Resultado">
         <button className="flex mx-auto mt-20 text-white text-sm font-black bg-[#6EAD15] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
-          enviar encuest  a
+          Enviar encuesta
         </button>
       </Link>
     </>
