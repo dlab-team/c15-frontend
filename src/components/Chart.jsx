@@ -23,15 +23,28 @@ ChartJS.defaults.borderColor = 'rgba(233, 125, 0, 1)';
 
 
 const Chart = ({dataResults}) => {
-  if (!dataResults || dataResults.length !== 6) {
+  if (!dataResults) {
     return 'Problemas al cargar la grafica'
   }
+  
+  const pillarsArray = dataResults.map(element => element.pillar)
+  //El split en pillarsGrafic separa los pilares que tengan mas de 1 palabra para que en el grafico se muestre uno debajo del otro
+  const pillarsGrafic = pillarsArray.map(element =>{
+    if(element.includes(' ')){
+      return element.split(' ')
+    }else {
+      return element
+    }
+  })
+  //Las labels del grafico toma los datos de pillarsValues lo que permite ingresar más o menos pilares y no se rompe el grafico
+  const pillarsValues = dataResults.map(element => element.value)
+
     const data = {
-        labels: ['Tributario', ['Planificacion', 'Estrategica'], 'KPI', ['Desarrollo', 'de', 'Equipos'], 'Venta', 'Marketing'],
+        labels: pillarsGrafic,
         datasets: [
           {
             label: 'Puntuacion',
-            data: [dataResults[0].value, dataResults[1].value, dataResults[2].value, dataResults[3].value, dataResults[4].value, dataResults[5].value],
+            data: pillarsValues,
             backgroundColor: 'rgba(137, 54, 133, 0.2)',
             borderColor: '#893685',
             pointBackgroundColor: '#893685',
