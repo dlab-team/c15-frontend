@@ -22,7 +22,7 @@ const Resultado = () => {
   };
   
   return (
-    <main>
+    <main className='pb-[40px]'>
         <div className='pt-[40px]'>
             <h1 className='text-center font-black text-3xl'>Resultado Diagnostico</h1>
             <p className='text-center '>Interpretación de resultado</p>
