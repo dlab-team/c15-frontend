@@ -1,6 +1,6 @@
-import React from "react";
-import Banner from "../assets/img/banner.png";
-import SectionHome from "../components/SectionHome";
+import React from 'react';
+import Banner from '../assets/img/banner.png';
+import SectionHome from '../components/SectionHome';
 
 function HomePage() {
   return (

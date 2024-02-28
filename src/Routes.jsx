@@ -21,7 +21,10 @@ const RoutesComponent = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Resultado" element={<Resultado />} />
-        <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
+        <Route
+          path="/RestablecerContrasena"
+          element={<RestablecerContrasena />}
+        />
       </Routes>
       <Footer></Footer>
     </>

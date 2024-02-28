@@ -11,7 +11,7 @@ const Diagnostic = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <div className="pt-36 max-sm:pt-8">
         {pillars.map((pillar) => (
           <Pillar key={pillar.pillar_id} pillar={pillar} />
@@ -22,7 +22,7 @@ const Diagnostic = () => {
           Enviar encuesta
         </button>
       </Link>
-    </>
+    </div>
   );
 };
 
