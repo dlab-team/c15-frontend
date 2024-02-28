@@ -1,16 +1,20 @@
-import React from 'react'
-import Logo from '../assets/img/Logo.png'
-import { useState } from 'react'
+import React from 'react';
+import Logo from '../assets/img/Logo.png';
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   console.log(isOpen);
-
+  const closeNav = () => {
+    setIsOpen(false);
+  };
   return (
-    <div className="flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center">
+    <div className=" flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center z-50">
       <div className="w-[200px] h-[50px] pl-5 flex">
-        <NavLink to="/" className='w-[200px] h-[50px] pl-5 flex' ><img src={Logo} alt="Logo-lofwork"/></NavLink>
+        <NavLink to="/" className="w-[200px] h-[50px] pl-5 flex">
+          <img src={Logo} alt="Logo-lofwork" />
+        </NavLink>
       </div>
       <div className="flex justify-end items-center p-3 lg:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
@@ -93,7 +97,10 @@ const Header = () => {
             <path d="M9 6l6 6l-6 6" />
           </svg>
         </Link>
-        <Link to="mailto:contacto@lofwork.cl" className="flex text-[var(--primary)] font-black">
+        <Link
+          to="mailto:contacto@lofwork.cl"
+          className="flex text-[var(--primary)] font-black"
+        >
           Contacto{' '}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +135,7 @@ const Header = () => {
       <div
         className={
           isOpen
-            ? 'lg:hidden bg-[var(--primary)] w-[180px] h-[80vh] absolute top-0 right-0 flex flex-col items-center justify-arround rounded-[0px_0px_0px_25px]'
+            ? 'lg:hidden bg-[var(--primary)] w-[180px] h-[80vh] absolute top-0 right-0 flex flex-col items-center justify-arround rounded-[0px_0px_0px_25px] z-30'
             : 'hidden'
         }
       >
@@ -157,6 +164,7 @@ const Header = () => {
           <Link
             to="/"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            onClick={closeNav}
           >
             Home{' '}
             <svg
@@ -178,6 +186,7 @@ const Header = () => {
           <Link
             to="/Diagnostico"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            onClick={closeNav}
           >
             Diagnóstico{' '}
             <svg
@@ -199,6 +208,7 @@ const Header = () => {
           <Link
             to="/Blog"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            onClick={closeNav}
           >
             {' '}
             Blog{' '}
@@ -221,6 +231,7 @@ const Header = () => {
           <Link
             to="mailto:contacto@lofwork.cl"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            onClick={closeNav}
           >
             Contacto{' '}
             <svg
@@ -241,10 +252,18 @@ const Header = () => {
           </Link>
         </div>
         <div className="w-[100%] flex flex-col items-center mt-10 gap-3">
-          <Link to="/Login" className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]">
+          <Link
+            to="/Login"
+            className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            onClick={closeNav}
+          >
             Login
           </Link>
-          <Link to="/Registro" className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--primary)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white">
+          <Link
+            to="/Registro"
+            className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--primary)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white"
+            onClick={closeNav}
+          >
             Registrate
           </Link>
         </div>
