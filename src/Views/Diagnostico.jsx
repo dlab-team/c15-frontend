@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Diagnostic from '../components/Diagnostic';
 
 const Diagnostico = () => {
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleToggle = () => {
     if (window.innerWidth <= 768) {
@@ -13,8 +17,8 @@ const Diagnostico = () => {
   };
 
   return (
-    <>
-      <div className=" wrapper grip grap-8 justify-items-center items-center text-center">
+    <div>
+      <div className="wrapper grip grap-8 justify-items-center items-center text-center">
         <h3 className=" font-bold py-10 max-sm:text-3xl sm:text-3xl md:text-4xl">
           Diagnóstico
         </h3>
@@ -75,9 +79,9 @@ const Diagnostico = () => {
         que también formarás parte de una comunidad comprometida con el progreso
         mutuo. Gracias por ser parte de nuestra comunidad. Estamos emocionados
         de acompañarte en tu camino hacia el éxito empresarial. ¡Adelante,
-        emprendedor!{' '}
+        emprendedor!
       </p>
-    </>
+    </div>
   );
 };
 

@@ -3,8 +3,7 @@ import axios from 'axios';
 import Chart from '../components/Chart';
 import Table from '../components/Table';
 import ResultsMessage from '../components/ResultsMessage';
-import {Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 
 const Resultado = () => {
   const [dataResults, setDataResults] = useState([]);
@@ -20,27 +19,32 @@ const Resultado = () => {
       console.error('Error al obtener los datos:', error);
     }
   };
-  
-  return (
-    <main className='pb-[40px]'>
-        <div className='pt-[40px]'>
-            <h1 className='text-center font-black text-3xl'>Resultado Diagnostico</h1>
-            <p className='text-center '>Interpretación de resultado</p>
-        </div>
-        <div className='p-[30px]'>
-          <Table dataResults={dataResults}/>
-        </div>
-        <div>
-          <Chart dataResults={dataResults}/>
-        </div>
-        <div>
-            <ResultsMessage dataResults={dataResults}/>
-            <Link to='/' className='bg-[var(--green)] flex justify-center items-center h-[50px] w-[100px] m-auto rounded-3xl text-white font-black'>Home</Link>
-        </div>
 
+  return (
+    <main className="pb-[40px]">
+      <div className="pt-[40px]">
+        <h1 className="text-center font-black text-3xl">
+          Resultado Diagnostico
+        </h1>
+        <p className="text-center ">Interpretación de resultado</p>
+      </div>
+      <div className="p-[30px]">
+        <Table dataResults={dataResults} />
+      </div>
+      <div>
+        <Chart dataResults={dataResults} />
+      </div>
+      <div>
+        <ResultsMessage dataResults={dataResults} />
+        <Link
+          to="/"
+          className="bg-[var(--green)] flex justify-center items-center h-[50px] w-[100px] m-auto rounded-3xl text-white font-black"
+        >
+          Home
+        </Link>
+      </div>
     </main>
   );
-}
+};
 
 export default Resultado;
-
