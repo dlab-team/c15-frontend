@@ -5,16 +5,16 @@ const Table = ({dataResults}) => {
         let colorResultado = '';
         let valueResultado = '';
         if (value >= 75) {
-          colorResultado = 'bg-[var(--alto)]';
+          colorResultado = 'bg-[var(--primary)] text-white';
           valueResultado = 'ALTO';
         } else if (value < 75 && value >= 41) {
-          colorResultado = 'bg-[var(--medio)] bg-opacity-60';
+          colorResultado = 'bg-[var(--lightblue)] text-white';
           valueResultado = 'MEDIO';
         } else if (value < 41 && value >= 16) {
-          colorResultado = 'bg-[var(--bajo)]';
+          colorResultado = 'bg-[var(--pink)] text-white';
           valueResultado = 'BAJO';
         } else {
-          colorResultado = 'bg-[var(--muybajo)] bg-opacity-10';
+          colorResultado = `bg-[var(--secondary)] text-[var(--primary)]`;
           valueResultado = 'MUY BAJO';
         }
         return { colorResultado, valueResultado };
@@ -38,7 +38,7 @@ const Table = ({dataResults}) => {
           return (
             <tr className='flex' key={index}>
               <td className='w-[40%] text-start flex items-center h-[50px]'>{pillar}</td>
-              <td className={'w-[30%] h-[50px] text-center flex justify-center items-center'}><span className={`w-[40px] h-[40px] rounded-3xl flex items-center justify-center text-white ${colorResultado}`}>{value}</span></td>
+              <td className={'w-[30%] h-[50px] text-center flex justify-center items-center'}><span className={`w-[40px] h-[40px] rounded-3xl flex items-center justify-center font-black ${colorResultado}`}>{value}</span></td>
               <td className='w-[30%] flex justify-center items-center h-[50px]'>{valueResultado}</td>
             </tr>
           );

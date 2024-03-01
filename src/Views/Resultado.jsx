@@ -23,10 +23,10 @@ const Resultado = () => {
   return (
     <main className="pb-[40px]">
       <div className="pt-[40px]">
-        <h1 className="text-center font-black text-3xl">
+        <h1 className="text-center text-[var(--primary)] font-black text-3xl">
           Resultado Diagnostico
         </h1>
-        <p className="text-center ">Interpretación de resultado</p>
+        <p className="text-center text-[var(--primary)]">Interpretación de resultado</p>
       </div>
       <div className="p-[30px]">
         <Table dataResults={dataResults} />

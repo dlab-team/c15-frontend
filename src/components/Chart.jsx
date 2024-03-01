@@ -19,7 +19,7 @@ ChartJS.register(
     Legend
   );
 
-ChartJS.defaults.borderColor = 'rgba(233, 125, 0, 1)';
+ChartJS.defaults.borderColor = 'rgba(219, 23, 129, 1)';
 
 
 const Chart = ({dataResults}) => {
@@ -45,9 +45,9 @@ const Chart = ({dataResults}) => {
           {
             label: 'Puntuacion',
             data: pillarsValues,
-            backgroundColor: 'rgba(137, 54, 133, 0.2)',
-            borderColor: '#893685',
-            pointBackgroundColor: '#893685',
+            backgroundColor: 'rgba(47, 42, 96, 0.2)',
+            borderColor: 'rgba(47, 42, 96, 1)',
+            pointBackgroundColor: 'rgba(47, 42, 96, 1)',
             borderWidth: 4,
           },
         ],
@@ -61,7 +61,7 @@ const Chart = ({dataResults}) => {
                 min: 0,
                 max: 100,
                 ticks: {
-                    color: 'rgba(233, 125, 0, 1)',
+                    color: 'rgba(219, 23, 129, 1)',
                     font: {
                         size:14
                     },
@@ -70,7 +70,7 @@ const Chart = ({dataResults}) => {
                 },
                 pointLabels: {
                     display:true,
-                    color: '#000000',
+                    color: 'rgba(47, 42, 96, 1)',
                     font:{
                         size:14,
                         weight: 'bold',

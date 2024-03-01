@@ -70,12 +70,12 @@ const FormRegister = () => {
                     // onChange={handlerChange}
                     required
                 />
-                <label className="mb-5">Debe tener al menos 8 caracteres</label>
+                <label className="mb-5 text-[var(--primary)]">Debe tener al menos 8 caracteres</label>
 
-                <label className="text-center mt-2">Al registrarme acepto los <b>términos y condiciones</b></label>
+                <label className="text-center mt-2 text-[var(--primary)]">Al registrarme acepto los <b>términos y condiciones</b></label>
                 <button
                     type="submit"
-                    className="mt-2 bg-[var(--green)] py-3 px-4 rounded-xl shadow-lg text-white font-medium hover:bg-green-700 hover:duration-300  md:w-[50%] md:mx-auto">
+                    className="mt-2 bg-[var(--pink)] py-3 px-4 rounded-xl shadow-lg text-white font-medium hover:bg-[var(--secondary)] hover:text-[var(--pink)] hover:duration-300  md:w-[50%] md:mx-auto">
                     {
                         /*cargando ? "Validando datos..." :*/ "Registrarme"
                     }

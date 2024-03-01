@@ -1,6 +1,5 @@
 import React from 'react';
 import RoutesComponent from './Routes';
-import './App.css';
 
 function App() {
   return <RoutesComponent />;

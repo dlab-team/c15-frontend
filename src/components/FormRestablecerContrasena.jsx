@@ -13,7 +13,7 @@ const FormRestablecerContrasena = () => {
             />
             <button
                 type="submit"
-                className="mt-2 bg-[var(--green)] py-3 px-4 rounded-xl shadow-lg text-white font-medium hover:bg-green-700 hover:duration-300 md:w-[50%] md:mx-auto">
+                className="mt-2 bg-[var(--pink)] py-3 px-4 rounded-xl shadow-lg text-white font-medium hover:bg-[var(--secondary)] hover:text-[var(--pink)] hover:duration-300 md:w-[50%] md:mx-auto">
                 {
                     /*cargando ? "Validando datos..." :*/ "Enviar"
                 }

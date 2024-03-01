@@ -12,13 +12,13 @@ const Diagnostic = () => {
 
   return (
     <div>
-      <div className="pt-36 max-sm:pt-8">
+      <div className="pt-36 max-sm:pt-8 max-w-[100%]">
         {pillars.map((pillar) => (
           <Pillar key={pillar.pillar_id} pillar={pillar} />
         ))}
       </div>
       <Link to="/Resultado">
-        <button className="flex mx-auto mt-20 text-white text-sm font-black bg-[#6EAD15] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
+        <button className="flex mx-auto mt-20 text-white text-sm font-black bg-[var(--pink)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
           Enviar encuesta
         </button>
       </Link>
