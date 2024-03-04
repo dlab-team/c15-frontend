@@ -6,7 +6,8 @@ import {
   faSquareInstagram,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
-import Logo from '../assets/img/Logo.png';
+import LogoMobile from '../assets/img/Logo-Movil.png'
+import LogoDesktop from '../assets/img/Logo-Desktop.png'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
       <div className="flex justify-between py-2 lg:py-2 bg-[var(--secondary)] ">
         <div className="flex flex-row pl-3 lg:pl-16 my-2 lg:my-4 h-[35%] lg:[h-40%] w-[20%] lg:w-[33%] ">
           <Link
-            href="mailto:contacto@lofwork.cl"
+            to="mailto:contacto@lofwork.cl"
             target="_blank"
             rel="noopener noreferrer"
             alt="ícono del correo"
@@ -32,8 +33,13 @@ const Footer = () => {
 
         <div className="flex justify-center my-2 lg:my-7 h-[35%] lg:[h-45%] lg:w-[33%]">
           <img
-            src={Logo}
-            className="h-[30px] lg:h-7 "
+            src={LogoMobile}
+            className="h-[30px] lg:h-7 lg:hidden "
+            alt="logo de la empresa"
+          />
+          <img
+            src={LogoDesktop}
+            className="h-[30px] lg:h-7 hidden lg:block"
             alt="logo de la empresa"
           />
         </div>
@@ -41,7 +47,7 @@ const Footer = () => {
         <div className="flex justify-center gap-5 pr-3 lg:gap-16 my-2 lg:my-4 lg:w-[33%]">
           <div className="h-[35%] lg:[h-40%]">
             <Link
-              href="hhttps://www.facebook.com/lofworkcl"
+              to="https://www.facebook.com/lofworkcl"
               target="_blank"
               rel="noopener noreferrer"
               alt="ícono de facebook"
@@ -55,7 +61,7 @@ const Footer = () => {
 
           <div className="h-[35%] lg:[h-40%]">
             <Link
-              href="https://www.instagram.com/lofwork/"
+              to="https://www.instagram.com/lofwork/"
               target="_blank"
               rel="noopener noreferrer"
               alt="ícono de instagram"
@@ -69,7 +75,7 @@ const Footer = () => {
 
           <div className="h-[35%] lg:[h-40%]">
             <Link
-              href="https://www.linkedin.com/company/lofwork/"
+              to="https://www.linkedin.com/company/lofwork/"
               target="_blank"
               rel="noopener noreferrer"
               alt="ícono de linkedin"

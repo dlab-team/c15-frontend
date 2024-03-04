@@ -14,7 +14,6 @@ const Articulo = () => {
     const {id} = useParams()
     const url = `http://localhost:3000/blog/${id}`;
     const urlArticle = window.location.href
-    console.log(urlArticle)
     
     /*const getData = async () => {
         try {
@@ -34,7 +33,7 @@ const Articulo = () => {
   return (
     <div>
         <div className='bg-[var(--secondary)] flex flex-col items-center w-[100%]'>
-            <div className='flex gap-3 text-[var(--orange)] w-[100%] lg:w-[70%] p-3'>
+            <div className='flex gap-3 text-[var(--primary)] w-[100%] lg:w-[70%] p-3'>
                 <Link to="/">Home <FontAwesomeIcon icon={faAngleRight} /></Link>
                 <Link to="/Blog">Blog <FontAwesomeIcon icon={faAngleRight} /></Link>
                 <Link to="/">{/* {article.title} */} Titulo de prueba</Link>
@@ -52,7 +51,7 @@ const Articulo = () => {
                     </div>
                 </div>
                 <div className='flex flex-col items-center'>
-                <span>Comparte este post:</span>
+                <span className='text-[var(--primary)]'>Comparte este post:</span>
                 <div className='flex gap-3'>
                         <a href={`https://web.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlArticle)}`} target="_blank" rel="noopener noreferrer" alt="ícono de facebook">
                         <FontAwesomeIcon icon={faSquareFacebook} className="text-[var(--primary)] h-[30px] fa-2x "/>
@@ -69,12 +68,12 @@ const Articulo = () => {
             </div>
         </div>
         <div className='flex flex-col items-center my-10 lg:w-[70%] m-auto'>
-            <h3 className='text-2xl font-black text-[var(--primary)]'>Subtitulo de prueba</h3>
-            <p className='px-10 py-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+            <h3 className='text-2xl font-black text-[var(--pink)]'>Subtitulo de prueba</h3>
+            <p className='px-10 py-5 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
             <img src={ChartImg} className="p-10" alt="" />
-            <h3 className='text-2xl font-black text-[var(--primary)]'>Subtitulo de prueba</h3>
-            <p className='px-10 py-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-            <Link to="/Blog" className='bg-[var(--orange)] w-[100px] text-center p-2 rounded-3xl font-black text-white'>Volver</Link>
+            <h3 className='text-2xl font-black text-[var(--pink)]'>Subtitulo de prueba</h3>
+            <p className='px-10 py-5 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+            <Link to="/Blog" className='bg-[var(--pink)] w-[100px] text-center p-2 rounded-3xl font-black text-white'>Volver</Link>
         </div>
     </div>
   )

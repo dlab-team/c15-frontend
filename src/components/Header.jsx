@@ -1,19 +1,22 @@
 import React from 'react';
-import Logo from '../assets/img/Logo.png';
+import LogoMobile from '../assets/img/Logo-Movil.png'
+import LogoDesktop from '../assets/img/Logo-Desktop.png'
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   const closeNav = () => {
     setIsOpen(false);
   };
   return (
     <div className=" flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center z-50">
       <div className="w-[200px] h-[50px] pl-5 flex">
-        <NavLink to="/" className="w-[200px] h-[50px] pl-5 flex">
-          <img src={Logo} alt="Logo-lofwork" />
+        <NavLink to="/" className="w-[200px] h-[50px] pl-5 flex justify-center items-center">
+          <img src={LogoMobile} alt="Logo-lofwork" className='block lg:hidden w-[160px] h-[30px]' />
+          <img src={LogoDesktop} alt="Logo-lofwork" className='hidden lg:block'/>
         </NavLink>
       </div>
       <div className="flex justify-end items-center p-3 lg:hidden">
@@ -39,95 +42,32 @@ const Header = () => {
       </div>
       {/*menu desktop */}
       <div className="hidden lg:flex w-[60%] justify-between items-center px-10">
-        <Link to="/" className="flex text-[var(--primary)] font-black">
-          Home{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l6 6l-6 6" />
-          </svg>
+        <Link to="/" className="flex gap-3 items-center text-[var(--primary)] font-black px-2">
+          Home{" "}<FontAwesomeIcon icon={faAngleRight} />
         </Link>
-        <Link to="/Blog" className="flex text-[var(--primary)] font-black">
-          {' '}
-          Blog{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l6 6l-6 6" />
-          </svg>
+        <Link to="/Blog" className="flex gap-3 items-center text-[var(--primary)] font-black">
+          Blog{" "}<FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
           to="/Diagnostico"
-          className="flex text-[var(--primary)] font-black"
-        >
-          Diagnóstico{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l6 6l-6 6" />
-          </svg>
+          className="flex gap-3 items-center text-[var(--primary)] font-black"
+        >Diagnóstico{" "}<FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
           to="mailto:contacto@lofwork.cl"
-          className="flex text-[var(--primary)] font-black"
+          className="flex gap-3 items-center text-[var(--primary)] font-black"
         >
-          Contacto{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l6 6l-6 6" />
-          </svg>
+          Contacto{" "}<FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
           to="/Login"
-          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--secondary)] rounded-3xl border-2 border-[var(--primary)] text-[var(--primary)]"
+          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--pink)] rounded-3xl border-2 border-[var(--pink)] text-white"
         >
           Login
         </Link>
         <Link
           to="/Registro"
-          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--primary)] rounded-3xl text-white"
-        >
+          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--secondary)] rounded-3xl border-2 border-[var(--pink)] text-[var(--pink)]">
           Registrate
         </Link>
       </div>
@@ -163,105 +103,44 @@ const Header = () => {
         <div className="w-[100%]">
           <Link
             to="/"
-            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            Home{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-chevron-right"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </svg>
+            Home <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
             to="/Diagnostico"
-            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            Diagnóstico{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-chevron-right"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </svg>
+            Diagnóstico <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
             to="/Blog"
-            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            {' '}
-            Blog{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-chevron-right"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </svg>
+            Blog <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
             to="mailto:contacto@lofwork.cl"
-            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            Contacto{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-chevron-right"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </svg>
+            Contacto <FontAwesomeIcon icon={faAngleRight} />
           </Link>
         </div>
         <div className="w-[100%] flex flex-col items-center mt-10 gap-3">
           <Link
             to="/Login"
-            className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center hover:bg-[var(--secondary)] hover:text-[var(--primary)]"
+            className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center bg-[var(--pink)] hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
             Login
           </Link>
           <Link
             to="/Registro"
-            className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--primary)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white"
+            className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--pink)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white"
             onClick={closeNav}
           >
             Registrate
