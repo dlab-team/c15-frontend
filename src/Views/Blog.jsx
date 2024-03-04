@@ -1,7 +1,5 @@
-// import React from 'react'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Highlighter from 'react-highlight-words';
 import Lupa from '../assets/img/Lupa.png'
 import Eliminar from '../assets/img/Eliminar.png'
 import Rectangle from '../assets/img/Rectangle_8.png'
