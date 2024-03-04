@@ -23,7 +23,6 @@ const Blog = () => {
   const handleSearch = (event) => {
     const query = event.target.value;
     setSearchTerm(query);
-
     console.log('Búsqueda:', query);
   }; 
 
