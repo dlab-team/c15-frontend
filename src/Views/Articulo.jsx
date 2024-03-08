@@ -7,6 +7,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import ChartImg from '../assets/img/amico.png'
+import { API_URL } from '../../env';
 
 const Articulo = () => {
   const [article, setArticle] = useState([]);
@@ -15,7 +16,7 @@ const Articulo = () => {
 
   useEffect(() => {
     if (params.id) {
-      axios.get(`http://localhost:3000/blog/${params.id}`
+      axios.get(`${API_URL}/blog/${params.id}`
         // ,{headers: {Authorization: `Bearer ${localStorage.getItem(TOKEN_NAME)}`}
       )
         .then(resp => {

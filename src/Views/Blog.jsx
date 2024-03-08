@@ -4,6 +4,7 @@ import Lupa from '../assets/img/Lupa.png'
 import Eliminar from '../assets/img/Eliminar.png'
 import axios from 'axios';
 import CardBlog from '../components/CardBlog';
+import { API_URL } from '../../env';
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([])
@@ -12,7 +13,7 @@ const Blog = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/blog`)
+    axios.get(`${API_URL}/blog`)
       .then(resp => {
         setBlogs(resp.data)
       })
