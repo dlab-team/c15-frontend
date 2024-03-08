@@ -6,8 +6,8 @@ const Pillar = ({ pillar }) => (
     <h2 className="font-black text-[var(--pink)] text-2xl text-center max-sm:text-xl sm:text-xl md:text-2xl">
       {pillar.pillar_name}
     </h2>
-    {pillar.questions.map((question) => (
-      <Question key={question.question.id} question={question} />
+    {pillar.Questions.map((question) => (
+      <Question key={question.id} question={question} />
     ))}
   </div>
 );
