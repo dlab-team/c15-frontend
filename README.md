@@ -34,7 +34,6 @@ Una vez que haya instalado las dependencias, puede ejecutar la aplicación utili
 npm run dev
 ```
 
-Esto iniciará el servidor de desarrollo de Vite y abrirá automáticamente la aplicación en su navegador predeterminado. La aplicación se actualizará automáticamente cada vez que realice cambios en el código fuente
 
 ## Tech Leader
 - Martin Carrasco
