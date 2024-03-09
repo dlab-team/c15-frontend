@@ -1,4 +1,5 @@
 import FormRegister from '../components/FormRegister'
+import { API_URL } from '../../env';
 
 const Registro = () => {
   return (
