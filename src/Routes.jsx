@@ -15,8 +15,8 @@ import {AuthProvider} from './context/Context';
 const RoutesComponent = () => {
   return (
     <>
-      <Header />
       <AuthProvider>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Diagnostico" element={<Diagnostico />} />
