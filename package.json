@@ -17,10 +17,12 @@
     "@tailwindcss/forms": "^0.5.7",
     "axios": "^1.6.7",
     "chart.js": "^4.4.1",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.21.3",
+    "sweetalert2": "^11.10.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
