@@ -15,8 +15,8 @@ import {AuthProvider} from './context/Context';
 const RoutesComponent = () => {
   return (
     <>
+      <Header />
       <AuthProvider>
-      <Header></Header>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Diagnostico" element={<Diagnostico />} />
@@ -25,9 +25,9 @@ const RoutesComponent = () => {
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Resultado" element={<Resultado />} />
         <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
-        <Route path="/Articulo/:id" element={<Articulo />}></Route>
+        <Route path="/Articulo/:id" element={<Articulo />} />
       </Routes>
-      <Footer></Footer>
+      <Footer />
       </AuthProvider>
     </>
   );
