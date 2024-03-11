@@ -4,7 +4,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import AuthContext from '../context/Context';
-import { API_URL } from '../../env';
 
 const Login = () => {
   const [user, setUser] = useState({});
@@ -27,7 +26,7 @@ const Login = () => {
     const endpoint = "/auth/login";
 
     try {
-      const { data } = await axios.post(API_URL + endpoint, user);
+      const { data } = await axios.post(import.meta.env.VITE_API_URL + endpoint, user);
       window.localStorage.setItem('token', data.token);
       storeToken(data.token);
       Swal.fire({
