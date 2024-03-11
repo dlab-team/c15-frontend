@@ -14,6 +14,7 @@ const Blog = () => {
     axios.get(`${import.meta.env.VITE_API_URL}/blog`)
       .then(resp => {
         setBlogs(resp.data)
+        console.log(resp.data)
       })
       .catch(err => console.log(err))
   }, [])

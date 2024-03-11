@@ -1,3 +1,5 @@
+import { API_URL } from '../../env';
+
 const CardBlog = ({ article }) => {
     const { id, title, image, content } = article
     return (

@@ -3,8 +3,8 @@ import Pillar from './Pillar';
 import { Suspense } from 'react';
 import { fetchData } from '../fetchData';
 import { Link } from 'react-router-dom';
-
-const apiData = fetchData('http://localhost:3000/questionnarie');
+import { API_URL } from '../../env';
+const apiData = fetchData(`${API_URL}/questionnarie`);
 
 const Diagnostic = () => {
   // get questionnarie
