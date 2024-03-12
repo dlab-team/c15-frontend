@@ -11,6 +11,7 @@ import RestablecerContrasena from './Views/RestablecerContrasena';
 import Footer from './components/Footer';
 import Articulo from './Views/Articulo';
 import {AuthProvider} from './context/Context';
+import Page_404 from './Views/Page_404';
 
 const RoutesComponent = () => {
   return (
@@ -26,6 +27,7 @@ const RoutesComponent = () => {
         <Route path="/Resultado" element={<Resultado />} />
         <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
         <Route path="/Articulo/:id" element={<Articulo />} />
+        <Route path="*" element={<Page_404 />}></Route>
       </Routes>
       <Footer />
       </AuthProvider>
