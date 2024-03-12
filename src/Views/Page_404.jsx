@@ -3,7 +3,7 @@ import Alien from '../assets/img/Error-Alien.png'
 
 const Page_404 = () => {
   return (
-    <div className='overflow-hidden relative h-[100vh] mb-[-30px]'>
+    <div className='overflow-hidden relative h-[100vh] mb-[-30px] '>
         <div className='w-[150px] lg:w-[350px] h-[150px] lg:h-[350px] absolute top-[20px] lg:top-[-60px] left-[-75px] lg:left-[-150px] rounded-full bg-gradient-to-t  from-pink-600 to-indigo-900'></div>
         <div className='w-[90px] lg:w-[200px] h-[90px] lg:h-[200px] absolute top-[80px] lg:top-[0px] right-[-50px] rounded-full bg-gradient-to-t from-blue-200 to-indigo-900'></div>
         <div className='w-[150px] h-[150px] absolute top-[500px] lg:top-[550px] lg:left-[100px] left-[-50px] rounded-full bg-gradient-to-t  from-pink-600 to-indigo-900'></div>
