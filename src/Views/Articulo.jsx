@@ -16,16 +16,13 @@ const Articulo = () => {
   useEffect(() => {
     if (params.id) {
       axios.get(`${import.meta.env.VITE_API_URL}/blog/${params.id}`
-        // ,{headers: {Authorization: `Bearer ${localStorage.getItem(TOKEN_NAME)}`}
       )
         .then(resp => {
-          // console.log(resp.data)
           setArticle(resp.data)
         })
         .catch(err => {
           console.log(err)
         })
-      // .finally(() => setLoading(false))
     }
   }, [])
 
@@ -36,18 +33,24 @@ const Articulo = () => {
   });
 
   return (
-    <div>
-      <div className='bg-[var(--primary)] flex flex-col items-center w-[100%]'>
-        <div className='flex gap-3 text-[var(--secondary)] w-[100%] lg:w-[70%] p-3'>
+    <>
+      <div className='bg-[var(--primary)] flex flex-col'>
+        <div className='flex gap-3 text-[var(--secondary)] lg:w-[70%] p-3 max-w-screen-xl mx-8'>
           <Link to="/">Home <FontAwesomeIcon icon={faAngleRight} /></Link>
           <Link to="/Blog">Blog <FontAwesomeIcon icon={faAngleRight} /></Link>
           <Link to="/">{article.title}</Link>
         </div>
-        <div className='my-5'>
-          <h1 className='text-3xl text-[var(--secondary)] font-black p-3 text-center'>{article.title}</h1>
-          <span className='text-[var(--secondary)] p-3'>📅 {formattedDate}</span>
+        <div className='my-5 max-w-screen-xl lg:w-1/2 lg:mx-auto mx-8'>
+          <h1 className='
+          text-3xl 
+          text-[var(--pink)] 
+          font-black 
+          p-3
+          '>{article.title}
+            <span className='text-[var(--secondary)] text-sm font-normal block mt-2'>📅 {formattedDate}</span>
+          </h1>
         </div>
-        <div className='flex w-[100%] lg:w-[50%] justify-between items-center px-3 my-5'>
+        <div className='flex w-[100%] lg:w-[50%] justify-between px-3 my-5 max-w-screen-xl mx-8 lg:mx-auto'>
           <div className='flex gap-3 items-center'>
             <div className='bg-[var(--primary)] w-[30px] h-[30px] rounded-3xl border'></div>
             <div className='flex flex-col text-[var(--secondary)]'>
@@ -55,7 +58,7 @@ const Articulo = () => {
               <span>{article.User && article.User.first_name} {article.User && article.User.last_name}</span>
             </div>
           </div>
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center mx-8'>
             <span className='text-[var(--secondary)]'>Comparte este post:</span>
             <div className='flex gap-3'>
               <a href={`https://web.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlArticle)}`} target="_blank" rel="noopener noreferrer" alt="ícono de facebook">
@@ -72,17 +75,23 @@ const Articulo = () => {
 
         </div>
       </div>
-      <div className='flex flex-col items-center my-10 lg:w-[70%] m-auto'>
-        <h3 className='text-2xl font-black text-[var(--pink)]'>Subtitulo de prueba</h3>
-        <p className='px-10 py-5 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+      <div className='flex flex-col items-center my-10 lg:w-[70%] m-auto max-w-screen-xl'>
+        <h3 className='text-2xl font-black text-[var(--pink)]'>Subtítulo del articulo del Blog</h3>
+        <p className='px-10 py-5 text-[var(--primary)]'>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+        <p className='px-10 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+
         <img src={ChartImg} className="p-10" alt="" />
-        <h3 className='text-2xl font-black text-[var(--pink)]'>Subtitulo de prueba</h3>
+
+        <h3 className='text-2xl font-black text-[var(--pink)]'>Subtítulo del articulo del Blog</h3>
         <p className='px-10 py-5 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-        <Link to="/Blog" className="flex mx-auto mt-20 text-white text-sm font-black bg-[var(--pink)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
+        <p className='px-10 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+        <p className='px-10 pt-5 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+        <Link to="/Blog" className="flex mx-auto mt-20 text-white text-sm font-black bg-[var(--primary)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
           Volver
         </Link>
       </div>
-    </div>
+    </>
   )
 }
 
