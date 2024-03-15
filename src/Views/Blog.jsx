@@ -66,7 +66,7 @@ const Blog = () => {
           <img src={Lupa} alt='' />
         </button>
       </div>
-      <div className="mx-8 pb-0 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 xl:grid-cols-4">
+      <div className="max-w-screen-xl pb-0 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto">
         {
           result.length === 0 ? (<p className=" col-span-4 text-center font-bold p-4">No se encontraron blogs</p>) :
             result && result.map(article => (
@@ -79,7 +79,7 @@ const Blog = () => {
       <div className='flex justify-center pb-1 pt-6 lg:pt-12 lg:pb-10'>
         <NavLink
           to="/"
-          className="flex mx-auto mt-20 text-white text-sm font-black bg-[var(--pink)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
+          className="flex mx-auto text-white text-sm font-black bg-[var(--primary)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
           Volver
         </NavLink>
       </div>
@@ -87,4 +87,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Blog;
