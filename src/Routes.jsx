@@ -17,8 +17,6 @@ import AdminRoutes from './guards/AdminRoutes';
 import PerfilAdministrador from './Views/PerfilAdministrador';
 
 const RoutesComponent = () => {
-
-  const { userData, token } = useContext(AuthContext);
   
   return (
     <>

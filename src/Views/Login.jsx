@@ -11,16 +11,22 @@ const Login = () => {
   const { storeToken, storeUser} = useContext(AuthContext);
   const navigate = useNavigate();
 
+
   const getUserData = async () =>{
     try {
       const token = window.localStorage.getItem('token');
-      console.log(token)
       if(token){
         const decoded = jwtDecode(token)
         const response = await axios.get(import.meta.env.VITE_API_URL + `/users/${decoded.sub}`, { headers: {Authorization: `${token}`}})
         const userData = { ...response.data };
         delete userData.password;
         storeUser(userData)
+        if(userData.role_id === 2){
+          navigate("/Administrador")
+        }else{
+          navigate("/")
+        }
+        
         }
     } catch (error) {
       console.log(error)
@@ -54,7 +60,6 @@ const Login = () => {
       });
       setUser({ data });
       getUserData()
-      navigate('/');
     } catch (error) {
       console.error(error);
       Swal.fire({
