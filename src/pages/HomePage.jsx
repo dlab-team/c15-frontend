@@ -1,6 +1,6 @@
-import React from "react";
-import Banner from "../assets/img/banner.png";
-import SectionHome from "../components/SectionHome";
+import React from 'react';
+import Banner from '../assets/img/banner.png';
+import SectionHome from '../components/SectionHome';
 
 function HomePage() {
   return (
@@ -13,10 +13,10 @@ function HomePage() {
         />
       </section>
       <section className="p-[60px]">
-        <h2 className="text-[var(--primary)] py-2 font-roboto font-black text-lg">
+        <h2 className="text-[var(--pink)] py-2 font-roboto font-black text-lg">
           ¿QUÉ ES?
         </h2>
-        <p>
+        <p className='text-[var(--primary)]'>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -29,7 +29,7 @@ function HomePage() {
         </p>
       </section>
       <section className="p-[60px] bg-[var(--primary)]">
-        <h2 className="text-[var(--orange)] py-2 font-roboto font-black text-lg text-end">
+        <h2 className="text-[var(--pink)] py-2 font-roboto font-black text-lg text-end">
           ¿CÓMO FUNCIONA?
         </h2>
         <p className="text-end text-white">
@@ -45,10 +45,10 @@ function HomePage() {
         </p>
       </section>
       <section className="p-[60px]">
-        <h2 className="text-[var(--primary)] py-2 font-roboto font-black text-lg">
+        <h2 className="text-[var(--pink)] py-2 font-roboto font-black text-lg">
           ¿BENEFICIOS?
         </h2>
-        <p>
+        <p className='text-[var(--primary)]'>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

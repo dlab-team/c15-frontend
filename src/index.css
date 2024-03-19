@@ -4,11 +4,10 @@
 @tailwind utilities;
 
 :root {
-  --primary: #893685;
-  --secondary: #ebebeb;
-  --green: #6ead15;
-  --orange: #e97d00;
-  --blue: #008dde;
+  --primary: #2F2A60;
+  --secondary: #EBEBEB;
+  --pink: #DB1781;
+  --lightblue: #008DDE;
   --alto: rgba(137, 54, 133, 1);
   --medio: rgba(137, 54, 133, 0.75);
   --bajo: rgba(137, 54, 133, 0.3);

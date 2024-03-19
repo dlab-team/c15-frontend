@@ -1,28 +1,115 @@
 import React, { useState, useEffect } from 'react';
 import Pillar from './Pillar';
-import data from '../data/data.json';
+import { Suspense } from 'react';
+import { fetchData } from '../fetchData';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../../env';
+const apiData = fetchData(`${API_URL}/questionnarie`);
 
 const Diagnostic = () => {
+  // get questionnarie
   const [pillars, setPillars] = useState([]);
+  const data = apiData.read();
 
   useEffect(() => {
     setPillars(data);
   }, []);
 
+  // paginacion
+  const [actualPage, setActualPage] = useState(1);
+  useEffect(() => {
+    window.scrollTo({ top: 550, behavior: 'smooth' });
+  }, [actualPage]);
+
+  const handlePageTurn = (page) => {
+    setActualPage(page);
+  };
+  const itemsPerPage = 1;
+  const totalPages = Math.ceil(pillars.length / itemsPerPage);
+  console.log(totalPages);
+  console.log(data);
   return (
-    <>
-      <div className="pt-36 max-sm:pt-8">
-        {pillars.map((pillar) => (
-          <Pillar key={pillar.pillar_id} pillar={pillar} />
-        ))}
+    <div>
+      {/* <div className="pt-36 max-sm:pt-8 max-w-[100%]">
+        <Suspense fallback={<div>Cargando...</div>}>
+          {pillars.map((pillar) => (
+            <Pillar key={pillar.pillar_id} pillar={pillar} />
+          ))}
+        </Suspense>
+      </div> */}
+      <div className=" pt-36 max-sm:pt-8 max-w-[100%]">
+        <Suspense fallback={<div>Cargando...</div>}>
+          {pillars
+            .slice((actualPage - 1) * itemsPerPage, actualPage * itemsPerPage)
+            .map((pillar) => (
+              <Pillar key={pillar.pillar_id} pillar={pillar} />
+            ))}
+        </Suspense>
       </div>
-      <Link to="/Resultado">
-        <button className="flex mx-auto mt-20 text-white text-sm font-black bg-[#6EAD15] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
-          Enviar encuesta
+      {/* Páginacion */}
+      <div className="flex items-center justify-center gap-8">
+        <button
+          disabled={actualPage === 1}
+          className="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg border border-gray-900 text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button"
+          onClick={() => handlePageTurn(actualPage - 1)}
+        >
+          <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              className="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              ></path>
+            </svg>
+          </span>
         </button>
-      </Link>
-    </>
+        <p className="block font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          Pilar <strong className="text-gray-900">{actualPage}</strong> de
+          <strong className="text-gray-900"> {totalPages}</strong>
+        </p>
+        <button
+          // cambiar y hacerlo dinamico
+          disabled={actualPage === totalPages}
+          className="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg border border-gray-900 text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button"
+          onClick={() => handlePageTurn(actualPage + 1)}
+        >
+          <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              className="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      {actualPage === totalPages && (
+        <Link to="/Resultado">
+          <button className="flex mx-auto mt-20 text-white text-sm font-black bg-[var(--pink)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
+            Enviar encuesta
+          </button>
+        </Link>
+      )}
+    </div>
   );
 };
 

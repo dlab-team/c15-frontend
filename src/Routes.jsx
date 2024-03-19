@@ -9,10 +9,13 @@ import Registro from './Views/Registro';
 import Resultado from './Views/Resultado';
 import RestablecerContrasena from './Views/RestablecerContrasena';
 import Footer from './components/Footer';
+import Articulo from './Views/Articulo';
+import {AuthProvider} from './context/Context';
 
 const RoutesComponent = () => {
   return (
     <>
+      <AuthProvider>
       <Header></Header>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -22,8 +25,10 @@ const RoutesComponent = () => {
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Resultado" element={<Resultado />} />
         <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
+        <Route path="/Articulo/:id" element={<Articulo />}></Route>
       </Routes>
       <Footer></Footer>
+      </AuthProvider>
     </>
   );
 };
