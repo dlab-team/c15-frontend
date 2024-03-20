@@ -27,18 +27,18 @@ const Resultado = () => {
           Resultado Diagnostico
         </h1>
         <p className="text-center text-[var(--primary)]">Interpretación de resultado</p>
+      </div>      
+      <div>
+        <Chart dataResults={dataResults} />
       </div>
       <div className="p-[30px]">
         <Table dataResults={dataResults} />
       </div>
       <div>
-        <Chart dataResults={dataResults} />
-      </div>
-      <div>
         <ResultsMessage dataResults={dataResults} />
         <Link
           to="/"
-          className="bg-[var(--green)] flex justify-center items-center h-[50px] w-[100px] m-auto rounded-3xl text-white font-black"
+          className="bg-[var(--primary)] flex justify-center items-center h-[50px] w-[100px] m-auto rounded-3xl text-white font-black"
         >
           Home
         </Link>
