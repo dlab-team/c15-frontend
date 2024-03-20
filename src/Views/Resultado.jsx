@@ -15,7 +15,7 @@ const Resultado = () => {
     try {
       const companyId = 3;
       const response = await axios.get(
-        `http://localhost:3000/diagnostic/${companyId}`
+        `${import.meta.env.VITE_API_URL}/diagnostic/${companyId}`
       );
       setDataResults(response.data);
     } catch (error) {
