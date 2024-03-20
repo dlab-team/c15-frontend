@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
-const Question = ({ question }) => {
+const Question = ({ question, pillarId, onSelection }) => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
+    onSelection(pillarId, question.id, option.id);
+    // console.log(option.id);
   };
   const renderInnerCircle = (isSelected) => {
     if (isSelected) {
@@ -24,7 +26,7 @@ const Question = ({ question }) => {
           <li key={option.id}>
             <label
               className={`flex items-center cursor-pointer  mb-10 w-[100%] gap-3 ${
-                selectedOption === option.id
+                selectedOption && selectedOption.id === option.id
                   ? 'bg-[var(--lightblue)] pr-3 rounded-full ring-2 ring-[var(--lightblue)] w-fit text-[var(--secondary)]'
                   : 'hover:bg-[var(--lightblue)] pr-3 text-[var(--primary)] rounded-full w-fit hover:text-[var(--secondary)]'
               }`}
@@ -34,17 +36,19 @@ const Question = ({ question }) => {
                 type="radio"
                 name={`question-${question.id}`}
                 value={option.id}
-                checked={selectedOption === option.id}
-                onChange={() => handleOptionChange(option.id)}
+                checked={selectedOption && selectedOption.id === option.id}
+                onChange={() => handleOptionChange(option)}
               />
               <div
                 className={`max-w-7 max-h-7 min-h-7 min-w-7 my-auto mr-1 rounded-full transition duration-250 ease cursor-pointer relative ${
-                  selectedOption === option.id
+                  selectedOption && selectedOption.id === option.id
                     ? 'bg-slate-50 border-2 border-[var(--lightblue)] '
                     : 'bg-white border-2 text-gray-700 '
                 }`}
               >
-                {renderInnerCircle(selectedOption === option.id)}
+                {renderInnerCircle(
+                  selectedOption && selectedOption.id === option.id
+                )}
               </div>
               {option.option}
             </label>

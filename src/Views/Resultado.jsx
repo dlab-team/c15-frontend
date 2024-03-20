@@ -13,10 +13,14 @@ const Resultado = () => {
 
   const getDataResults = async () => {
     try {
-      const response = await axios.get('./fakeResults.json');
+      const companyId = 3;
+      const response = await axios.get(
+        `http://localhost:3000/diagnostic/${companyId}`
+      );
       setDataResults(response.data);
     } catch (error) {
-      console.error('Error al obtener los datos:', error);
+      console.error('Error al obtener los datos:', error.message);
+      console.error('Detalles adicionales:', error.response);
     }
   };
 
@@ -26,10 +30,9 @@ const Resultado = () => {
         <h1 className="text-center text-[var(--primary)] font-black text-3xl">
           Resultado Diagnostico
         </h1>
-        <p className="text-center text-[var(--primary)]">Interpretación de resultado</p>
-      </div>      
-      <div>
-        <Chart dataResults={dataResults} />
+        <p className="text-center text-[var(--primary)]">
+          Interpretación de resultado
+        </p>
       </div>
       <div className="p-[30px]">
         <Table dataResults={dataResults} />

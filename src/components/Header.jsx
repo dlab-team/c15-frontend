@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import AuthContext from '../context/Context';
-import LogoMobile from '../assets/img/Logo-Movil.png'
-import LogoDesktop from '../assets/img/Logo-Desktop.png'
+import LogoMobile from '../assets/img/Logo-Movil.png';
+import LogoDesktop from '../assets/img/Logo-Desktop.png';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,19 +20,30 @@ const Header = () => {
  
 
   const cerrarSesion = () => {
-    clearToken(); 
+    clearToken();
     Swal.fire({
       icon: 'success',
       title: 'Sesión cerrada con éxito',
     });
   };
-  
+
   return (
     <div className="flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center z-50">
       <div className="w-[200px] h-[50px] pl-5 flex">
-        <NavLink to="/" className="w-[200px] h-[50px] pl-5 flex justify-center items-center">
-          <img src={LogoMobile} alt="Logo-lofwork" className='block lg:hidden w-[160px] h-[30px]' />
-          <img src={LogoDesktop} alt="Logo-lofwork" className='hidden lg:block'/>
+        <NavLink
+          to="/"
+          className="w-[200px] h-[50px] pl-5 flex justify-center items-center"
+        >
+          <img
+            src={LogoMobile}
+            alt="Logo-lofwork"
+            className="block lg:hidden w-[160px] h-[30px]"
+          />
+          <img
+            src={LogoDesktop}
+            alt="Logo-lofwork"
+            className="hidden lg:block"
+          />
         </NavLink>
       </div>
       <div className="flex justify-end items-center p-3 lg:hidden">

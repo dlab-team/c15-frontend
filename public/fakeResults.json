@@ -1,32 +1,32 @@
 [
-    {
-        "pillar": "Tributario",
-        "value": "76",
-        "description": "El resultado indica que conocimiento tributario es bastante sólido. Estás al tanto de las complejidades fiscales, por lo que has logrado optimizar la carga asociada para aprovechar al máximo las disposiciones legales vigentes."
-    },
-    {
-        "pillar": "Planificacion Estrategica",
-        "value": "50",
-        "description": "La presencia de una visión clara a largo plazo es un punto positivo. No obstante, el puntaje revela carencias en la ejecución de elementos clave. Mejorar en estos aspectos podría alinear más efectivamente los objetivos con la visión, fortaleciendo la dirección y el enfoque de la empresa."
-    },
-    {
-        "pillar": "KPI",
-        "value": "25",
-        "description": "La falta de identficación y seguimiento de KPI refleja una carencia significativa en la medición del rendimiento empresarial. La implementación de KPI es esencial para evaluar el progreso hacia los objetivos y tomar decisiones basadas en datos. Se sugiere establecer métricas relevantes y un sistema para su seguimiento y análisis periódico."
-    },
-    {
-        "pillar": "Desarrollo de equipos",
-        "value": "58",
-        "description": "El resultado indica que el Desarrollo de Equipos es eficiente, sin embargo es posible mejorar su condición actual. Se sugiere establecer estrategias claras y prácticas clave que pueden contribuir al desarrollo eficiente de los equipos en términos de comunicación, metas y roles, con vista al éxito de la organización."
-    },
-    {
-        "pillar": "Ventas",
-        "value": "5",
-        "description": "De acuerdo al resultado, se requiere de manera inmediata una mejora en las condiciones en esta área, por lo que se sugiere aplicar múltiples estrategias para abordar esta situación a fin de evalúar los procesos y realizar los ajustes que sean necesarios para mejorar cada uno de los factores que se demuestran deficientes."
-    },
-    {
-        "pillar": "Marketing",
-        "value": "66",
-        "description": "El área de marketing muestra cierta actividad, pero hay margen para mejorar. Se recomienda desarrollar una estrategia de marketing más sólida que logre alinearse con los objetivos comerciales y las necesidades del mercado, esto puede aumentar la visibilidad de la organización y generar un mayor interés por parte de los clientes potenciales."
-    }
+  {
+    "pillar": "Tributario",
+    "value": "76",
+    "description": "El resultado indica que conocimiento tributario es bastante sólido. Estás al tanto de las complejidades fiscales, por lo que has logrado optimizar la carga asociada para aprovechar al máximo las disposiciones legales vigentes."
+  },
+  {
+    "pillar": "Planificacion Estrategica",
+    "value": "50",
+    "description": "La presencia de una visión clara a largo plazo es un punto positivo. No obstante, el puntaje revela carencias en la ejecución de elementos clave. Mejorar en estos aspectos podría alinear más efectivamente los objetivos con la visión, fortaleciendo la dirección y el enfoque de la empresa."
+  },
+  {
+    "pillar": "KPI",
+    "value": "25",
+    "description": "La falta de identficación y seguimiento de KPI refleja una carencia significativa en la medición del rendimiento empresarial. La implementación de KPI es esencial para evaluar el progreso hacia los objetivos y tomar decisiones basadas en datos. Se sugiere establecer métricas relevantes y un sistema para su seguimiento y análisis periódico."
+  },
+  {
+    "pillar": "Desarrollo de equipos",
+    "value": "58",
+    "description": "El resultado indica que el Desarrollo de Equipos es eficiente, sin embargo es posible mejorar su condición actual. Se sugiere establecer estrategias claras y prácticas clave que pueden contribuir al desarrollo eficiente de los equipos en términos de comunicación, metas y roles, con vista al éxito de la organización."
+  },
+  {
+    "pillar": "Ventas",
+    "value": "5",
+    "description": "De acuerdo al resultado, se requiere de manera inmediata una mejora en las condiciones en esta área, por lo que se sugiere aplicar múltiples estrategias para abordar esta situación a fin de evalúar los procesos y realizar los ajustes que sean necesarios para mejorar cada uno de los factores que se demuestran deficientes."
+  },
+  {
+    "pillar": "Marketing",
+    "value": "66",
+    "description": "El área de marketing muestra cierta actividad, pero hay margen para mejorar. Se recomienda desarrollar una estrategia de marketing más sólida que logre alinearse con los objetivos comerciales y las necesidades del mercado, esto puede aumentar la visibilidad de la organización y generar un mayor interés por parte de los clientes potenciales."
+  }
 ]
