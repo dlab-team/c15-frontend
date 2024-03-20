@@ -18,7 +18,7 @@ const FormRegister = () => {
 
 
         const postUser = new Promise((resolve, reject) => {
-            axios.post('http://localhost:3000/user/', {
+            axios.post(import.meta.env.VITE_API_URL + "/users", {
                 first_name,
                 last_name,
                 email,
