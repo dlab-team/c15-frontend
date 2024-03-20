@@ -10,11 +10,14 @@ import Resultado from './Views/Resultado';
 import RestablecerContrasena from './Views/RestablecerContrasena';
 import Footer from './components/Footer';
 import Articulo from './Views/Articulo';
+import {AuthProvider} from './context/Context';
+import Page_404 from './Views/Page_404';
 
 const RoutesComponent = () => {
   return (
     <>
-      <Header></Header>
+      <AuthProvider>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Diagnostico" element={<Diagnostico />} />
@@ -23,9 +26,11 @@ const RoutesComponent = () => {
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Resultado" element={<Resultado />} />
         <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
-        <Route path="/Articulo/:id" element={<Articulo />}></Route>
+        <Route path="/Articulo/:id" element={<Articulo />} />
+        <Route path="*" element={<Page_404 />}></Route>
       </Routes>
-      <Footer></Footer>
+      <Footer />
+      </AuthProvider>
     </>
   );
 };

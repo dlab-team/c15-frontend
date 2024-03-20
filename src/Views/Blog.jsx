@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Lupa from '../assets/img/Lupa.png'
 import Eliminar from '../assets/img/Eliminar.png'
 import axios from 'axios';
 import CardBlog from '../components/CardBlog';
-import { API_URL } from '../../env';
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([])
   const [result, setResult] = useState([])
   const [filterValue, setFilterValue] = useState('');
-  const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${API_URL}/blog`)
+    axios.get(`${import.meta.env.VITE_API_URL}/blog`)
       .then(resp => {
         setBlogs(resp.data)
+        console.log(resp.data)
       })
       .catch(err => console.log(err))
   }, [])
@@ -44,7 +43,7 @@ const Blog = () => {
     <>
       <div className='py-8 flex justify-center font-extrabold text-3xl'>BLOG</div>
       <div className='mx-24 text-xl text-center font-light'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum  has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-      <div className='flex justify-center py-12 '>
+      <div className='flex justify-center py-12'>
         <input
           type="text"
           id="filterInput"
@@ -67,7 +66,7 @@ const Blog = () => {
           <img src={Lupa} alt='' />
         </button>
       </div>
-      <div className="mx-8 pb-0 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 xl:grid-cols-4">
+      <div className="max-w-screen-xl pb-0 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto">
         {
           result.length === 0 ? (<p className=" col-span-4 text-center font-bold p-4">No se encontraron blogs</p>) :
             result && result.map(article => (
@@ -77,16 +76,15 @@ const Blog = () => {
             ))
         }
       </div>
-      <div
-        className='flex justify-center pb-1 pt-6 lg:pt-12 lg:pb-10'>
-        <button
-          onClick={() => navigate(-1)}
-          className='bg-[var(--pink)] py-2 px-8 font-extrabold text-white text-3xl rounded-full'>
-          VOLVER
-        </button>
+      <div className='flex justify-center pb-1 pt-6 lg:pt-12 lg:pb-10'>
+        <NavLink
+          to="/"
+          className="flex mx-auto text-white text-sm font-black bg-[var(--primary)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
+          Volver
+        </NavLink>
       </div>
     </>
   )
 }
 
-export default Blog
+export default Blog;

@@ -1,16 +1,28 @@
-import React from 'react';
+import { useContext } from 'react';
+import AuthContext from '../context/Context';
 import LogoMobile from '../assets/img/Logo-Movil.png';
 import LogoDesktop from '../assets/img/Logo-Desktop.png';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { token, clearToken } = useContext(AuthContext);
   const closeNav = () => {
     setIsOpen(false);
   };
+
+  const cerrarSesion = () => {
+    clearToken();
+    Swal.fire({
+      icon: 'success',
+      title: 'Sesión cerrada con éxito',
+    });
+  };
+
   return (
     <div className=" flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center z-50">
       <div className="w-[200px] h-[50px] pl-5 flex">
@@ -77,18 +89,29 @@ const Header = () => {
         >
           Contacto <FontAwesomeIcon icon={faAngleRight} />
         </Link>
-        <Link
-          to="/Login"
-          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--pink)] rounded-3xl border-2 border-[var(--pink)] text-white"
-        >
-          Login
-        </Link>
-        <Link
-          to="/Registro"
-          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--secondary)] rounded-3xl border-2 border-[var(--pink)] text-[var(--pink)]"
-        >
-          Registrate
-        </Link>
+        {!token ? (
+          <Link
+            to="/Login"
+            className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--pink)] rounded-3xl border-2 border-[var(--pink)] text-white"
+          >
+            Login
+          </Link>
+        ) : (
+          <Link
+            onClick={cerrarSesion}
+            className="w-[150px] h-[40px] justify-center items-center flex bg-[var(--pink)] rounded-3xl border-2 border-[var(--pink)] text-white"
+          >
+            Cerrar Sesion
+          </Link>
+        )}
+        {!token ? (
+          <Link
+            to="/Registro"
+            className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--secondary)] rounded-3xl border-2 border-[var(--pink)] text-[var(--pink)]"
+          >
+            Registrate
+          </Link>
+        ) : null}
       </div>
       {/*menu mobile */}
       <div
@@ -150,20 +173,34 @@ const Header = () => {
           </Link>
         </div>
         <div className="w-[100%] flex flex-col items-center mt-10 gap-3">
-          <Link
-            to="/Login"
-            className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center bg-[var(--pink)] hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
-            onClick={closeNav}
-          >
-            Login
-          </Link>
-          <Link
-            to="/Registro"
-            className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--pink)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white"
-            onClick={closeNav}
-          >
-            Registrate
-          </Link>
+          {!token ? (
+            <Link
+              to="/Login"
+              className="w-[70%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center bg-[var(--pink)] hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
+              onClick={closeNav}
+            >
+              Login
+            </Link>
+          ) : (
+            <Link
+              className="w-[80%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center bg-[var(--pink)] hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
+              onClick={() => {
+                closeNav();
+                cerrarSesion();
+              }}
+            >
+              Cerrar Sesion
+            </Link>
+          )}
+          {!token ? (
+            <Link
+              to="/Registro"
+              className="w-[70%] p-3 text-center rounded-3xl bg-[var(--secondary)]  text-[var(--pink)] text-lg font-black items-center hover:bg-[var(--primary)] hover:text-[var(--secondary)] hover:border-2 hover:border-white"
+              onClick={closeNav}
+            >
+              Registrate
+            </Link>
+          ) : null}
         </div>
       </div>
     </div>

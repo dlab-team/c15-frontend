@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Diagnostic from '../components/Diagnostic';
 
 const Diagnostico = () => {
@@ -24,9 +24,9 @@ const Diagnostico = () => {
         </h3>
         <p className="text-2xl text-[var(--primary)] leading-5 pb-8 max-w-7xl mx-auto max-sm:text-xl max-sm:w-10/12 sm:text-xl sm:w-10/12 md:text-2xl">
           Nuestra encuesta está diseñada para apoyar a emprendedores como tú a
-          obtener una 
+          obtener una
           <b>
-          {' '}visión clara de su situación actual
+            {' '}visión clara de su situación actual
           </b>{' '}
           en diversos aspectos cruciales de sus negocios. Al responder
           honestamente a las{' '}
