@@ -5,7 +5,7 @@ import { fetchData } from '../fetchData';
 import { Link } from 'react-router-dom';
 
 //  peticion questionario y usuario
-const apiData = fetchData('http://localhost:3000/questionnarie');
+const apiData = fetchData(`${import.meta.env.VITE_API_URL}/questionnarie`);
 // const dataUser = fetchData('http://localhost:3000/diagnostic/process/:id');
 
 const Diagnostic = () => {
