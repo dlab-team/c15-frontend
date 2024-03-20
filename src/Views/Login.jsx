@@ -1,14 +1,38 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState} from 'react';
+import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import AuthContext from '../context/Context';
 
 const Login = () => {
   const [user, setUser] = useState({});
-  const { storeToken } = useContext(AuthContext);
+  const { storeToken, storeUser} = useContext(AuthContext);
   const navigate = useNavigate();
+
+
+  const getUserData = async () =>{
+    try {
+      const token = window.localStorage.getItem('token');
+      if(token){
+        const decoded = jwtDecode(token)
+        const response = await axios.get(import.meta.env.VITE_API_URL + `/users/${decoded.sub}`, { headers: {Authorization: `${token}`}})
+        const userData = { ...response.data };
+        delete userData.password;
+        storeUser(userData)
+        if(userData.role_id === 2){
+          navigate("/Administrador")
+        }else{
+          navigate("/")
+        }
+        
+        }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
 
   const handleUser = (event) => setUser({ ...user, [event.target.name]: event.target.value });
 
@@ -35,7 +59,7 @@ const Login = () => {
         text: 'Usuario identificado con éxito 😀.',
       });
       setUser({ data });
-      navigate('/');
+      getUserData()
     } catch (error) {
       console.error(error);
       Swal.fire({
@@ -45,6 +69,7 @@ const Login = () => {
       });
     }
   };
+  
 
   return (
     <main className='flex container'>
