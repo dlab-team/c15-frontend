@@ -25,6 +25,11 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
           Usuarios{" "}<FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
+          to="/Perfil"
+          className="flex gap-3 items-center text-[var(--primary)] font-black"
+        >Perfil{" "}<FontAwesomeIcon icon={faAngleRight} />
+        </Link>
+        <Link
           onClick={cerrarSesion}
           className="w-[150px] h-[40px] justify-center items-center flex bg-[var(--pink)] rounded-3xl border-2 border-[var(--pink)] text-white"
         >
@@ -95,6 +100,13 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
             onClick={closeNav}
           >
             Contacto <FontAwesomeIcon icon={faAngleRight} />
+          </Link>
+          <Link
+            to="/Perfil"
+            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
+            onClick={closeNav}
+          >
+            Perfil <FontAwesomeIcon icon={faAngleRight} />
           </Link>
         </div>
         <div className="w-[100%] flex flex-col items-center mt-10 gap-3">

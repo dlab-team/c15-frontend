@@ -12,6 +12,10 @@ import Articulo from './Views/Articulo';
 import Page_404 from './Views/Page_404';
 import Diagnostico from './Views/Diagnostico'
 import Resultado from './Views/Resultado';
+import Perfil from './Views/Perfil'
+import Misresultados from './Views/Misresultados'
+import CambiarPassword from './Views/CambiarPassword'
+import ActualizarPerfil from './Views/ActualizarPerfil'
 import PrivateRoutes from './guards/PrivateRoutes';
 import AdminRoutes from './guards/AdminRoutes';
 import PerfilAdministrador from './Views/PerfilAdministrador';
@@ -32,6 +36,10 @@ const RoutesComponent = () => {
         <Route element={<PrivateRoutes/>}>
           <Route path="/Diagnostico" element={<Diagnostico />} />
           <Route path="/Resultado" element={<Resultado />} />
+          <Route path="/Perfil" element={<Perfil />} />
+            <Route path="/Perfil/Misresultados" element={<Misresultados />} />
+            <Route path="/Perfil/ActualizarPerfil" element={<ActualizarPerfil />} />
+            <Route path="/Perfil/CambiarPassword" element={<CambiarPassword />} />
         </Route>
         <Route element={<AdminRoutes/>}>
           <Route path="/Administrador" element={<PerfilAdministrador />} />
