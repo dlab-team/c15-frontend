@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import AuthContext from '../context/Context';
 import Pillar from './Pillar';
 import { Suspense } from 'react';
 import { fetchData } from '../fetchData';
 import { Link } from 'react-router-dom';
 
 //  peticion questionario y usuario
-const apiData = fetchData('http://localhost:3000/questionnarie');
+const apiData = fetchData(`${import.meta.env.VITE_API_URL}/questionnarie`);
 // const dataUser = fetchData('http://localhost:3000/diagnostic/process/:id');
 
 const Diagnostic = () => {
+  const { userData } = useContext(AuthContext);
+  const companyId = userData.Companies[0].id;
   const [pillars, setPillars] = useState([]);
   const data = apiData.read();
 
@@ -42,7 +46,6 @@ const Diagnostic = () => {
   };
   // Envio de respuestas
   const handleSendAnswers = () => {
-    const companyId = 1;
     const requestBody = {
       company_id: companyId,
       answers: Object.values(selections).reduce((groupedAnswers, answer) => {
