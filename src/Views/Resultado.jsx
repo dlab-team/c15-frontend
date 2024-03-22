@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import AuthContext from '../context/Context';
 import axios from 'axios';
 import Chart from '../components/Chart';
 import Table from '../components/Table';
@@ -6,6 +8,9 @@ import ResultsMessage from '../components/ResultsMessage';
 import { Link } from 'react-router-dom';
 
 const Resultado = () => {
+  const { userData } = useContext(AuthContext);
+  // console.log(userData.Companies[0].id);
+  const companyId = userData.Companies[0].id;
   const [dataResults, setDataResults] = useState([]);
   useEffect(() => {
     getDataResults();
@@ -13,7 +18,6 @@ const Resultado = () => {
 
   const getDataResults = async () => {
     try {
-      const companyId = 3;
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/diagnostic/${companyId}`
       );
@@ -30,6 +34,7 @@ const Resultado = () => {
         <h1 className="text-center text-[var(--primary)] font-black text-3xl">
           Resultado Diagnostico
         </h1>
+
         <p className="text-center text-[var(--primary)]">
           Interpretación de resultado
         </p>
@@ -38,6 +43,9 @@ const Resultado = () => {
         <Table dataResults={dataResults} />
       </div>
       <div>
+        <div>
+          <Chart dataResults={dataResults} />
+        </div>
         <ResultsMessage dataResults={dataResults} />
         <Link
           to="/"
