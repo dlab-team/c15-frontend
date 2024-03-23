@@ -5,7 +5,8 @@ const AuthContext = createContext([]);
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('userData')))
-
+  const [option, setOption] = useState(null)
+  const [value, setValue] = useState(0)
   const storeUser = (addData) =>{
     setUserData(addData)
     window.localStorage.setItem('userData', JSON.stringify(addData))
@@ -24,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ token, storeToken, clearToken, userData,storeUser}}>
+    <AuthContext.Provider value={{ token, storeToken, clearToken, userData,storeUser, option, setOption, value, setValue}}>
       {children}
     </AuthContext.Provider>
   );

@@ -19,6 +19,7 @@ import ActualizarPerfil from './Views/ActualizarPerfil'
 import PrivateRoutes from './guards/PrivateRoutes';
 import AdminRoutes from './guards/AdminRoutes';
 import PerfilAdministrador from './Views/PerfilAdministrador';
+import CrearPregunta from './Views/CrearPregunta';
 
 const RoutesComponent = () => {
   
@@ -43,6 +44,7 @@ const RoutesComponent = () => {
         </Route>
         <Route element={<AdminRoutes/>}>
           <Route path="/Administrador" element={<PerfilAdministrador />} />
+          <Route path="/NuevaPregunta" element={<CrearPregunta />} />
         </Route>
       </Routes>
       <Footer />
