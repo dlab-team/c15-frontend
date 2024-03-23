@@ -10,7 +10,10 @@ import { Link } from 'react-router-dom';
 const Resultado = () => {
   const { userData } = useContext(AuthContext);
   // console.log(userData.Companies[0].id);
-  const companyId = userData.Companies[0].id;
+  const companyId =
+    userData && userData.Companies && userData.Companies.length > 0
+      ? userData.Companies[0].id
+      : null;
   const [dataResults, setDataResults] = useState([]);
   useEffect(() => {
     getDataResults();

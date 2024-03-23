@@ -12,7 +12,10 @@ const apiData = fetchData(`${import.meta.env.VITE_API_URL}/questionnarie`);
 
 const Diagnostic = () => {
   const { userData } = useContext(AuthContext);
-  const companyId = userData.Companies[0].id;
+  const companyId =
+    userData && userData.Companies && userData.Companies.length > 0
+      ? userData.Companies[0].id
+      : null;
   const [pillars, setPillars] = useState([]);
   const data = apiData.read();
 
