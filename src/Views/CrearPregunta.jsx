@@ -4,6 +4,7 @@ import OptionsValues from "../components/OptionsValues";
 import AuthContext from "../context/Context";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 
 const CrearPregunta = () => {
     const [pillars, setPillars] = useState([]);
@@ -38,7 +39,11 @@ const CrearPregunta = () => {
             setArrOptions(opciones => [...opciones, {"order": indexOption,"answer": option, "score": value}])
             setOption('')
         }else{
-            alert(`Solo se pueden agregar ${optionCount} opciones`)
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops...',
+                text: `Solo se pueden agregar ${optionCount} opciones`,
+              });
         }
         
     }
@@ -68,7 +73,11 @@ const CrearPregunta = () => {
                 ...option, question_id: questionID
             }))
             const response = await axios.post(import.meta.env.VITE_API_URL + "/option", newArray);
-            console.log("datos enviados correctamente")
+            Swal.fire({
+                icon: 'success',
+                title: '¡Éxito!',
+                text: 'Pregunta creada exitosamente 😀.',
+              });
             setArrOptions([])
         } catch (error) {
             console.log(error)
