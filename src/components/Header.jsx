@@ -28,7 +28,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex w-[100%] h-[80px] justify-between bg-[var(--secondary)] items-center z-50">
+    <div className="flex w-[100%] h-[80px] justify-start bg-[var(--secondary)] items-center z-50">
       <div className="w-[200px] h-[50px] pl-5 flex">
         <NavLink
           to="/"
@@ -46,7 +46,8 @@ const Header = () => {
           />
         </NavLink>
       </div>
-      <div className="flex justify-end items-center p-3 lg:hidden">
+      <div className="flex justify-end w-full">
+      <div className="flex justify-between items-center p-3 lg:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +67,7 @@ const Header = () => {
             <path d="M4 18l16 0" />
           </svg>
         </button>
+      </div>
       </div>
       <div>
       {
