@@ -81,7 +81,7 @@ const Chart = ({dataResults}) => {
         maintainAspectRatio: false,
     }
     return (
-    <Radar data={data} className='h-[300px] lg:h-[500px]'
+    <Radar data={data} className='h-[240px] lg:h-[410px]'
     options={options}/>
   )
 }
