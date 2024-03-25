@@ -43,3 +43,4 @@ npm run dev
 - Angel Salazar
 - Henry Saldaña
 - Edicto Cortez
+- Jonathan Ruiz
