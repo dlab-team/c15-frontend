@@ -1,6 +1,4 @@
 import Header from './components/Header';
-import AuthContext from './context/Context';
-import { useContext } from 'react';
 import Footer from './components/Footer';
 import { Route, Routes } from "react-router-dom";
 import HomePage from './pages/HomePage';
@@ -19,6 +17,7 @@ import ActualizarPerfil from './Views/ActualizarPerfil'
 import PrivateRoutes from './guards/PrivateRoutes';
 import AdminRoutes from './guards/AdminRoutes';
 import PerfilAdministrador from './Views/PerfilAdministrador';
+import VistaFormBlog from './Views/VistaFormBlog';
 
 const RoutesComponent = () => {
   
@@ -43,6 +42,8 @@ const RoutesComponent = () => {
         </Route>
         <Route element={<AdminRoutes/>}>
           <Route path="/Administrador" element={<PerfilAdministrador />} />
+          <Route path="/Administrador/Blog/Editar/:id" element={<VistaFormBlog />} />
+          <Route path="/Administrador/Blog/Crear" element={<VistaFormBlog />} />
         </Route>
       </Routes>
       <Footer />
