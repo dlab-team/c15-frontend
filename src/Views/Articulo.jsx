@@ -7,6 +7,8 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import ChartImg from '../assets/img/amico.png'
+import { FormatDate } from '../helpers/FormatDate';
+import { stringify } from 'postcss';
 
 const Articulo = () => {
   const [article, setArticle] = useState([]);
@@ -26,11 +28,7 @@ const Articulo = () => {
     }
   }, [])
 
-  const formattedDate = new Date(article.createdAt).toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  const formattedDate = FormatDate(article.createdAt);
 
   return (
     <>
@@ -55,7 +53,7 @@ const Articulo = () => {
             <div className='bg-[var(--primary)] w-[30px] h-[30px] rounded-3xl border'></div>
             <div className='flex flex-col text-[var(--secondary)]'>
               <span>Escrito por:</span>
-              <span>{article.User && article.User.first_name} {article.User && article.User.last_name}</span>
+              <span>{article.author}</span>
             </div>
           </div>
           <div className='flex flex-col items-center mx-8'>
@@ -81,13 +79,9 @@ const Articulo = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
         <p className='px-10 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
 
-        <img src={ChartImg} className="p-10" alt="" />
-
-        <h3 className='text-2xl font-black text-[var(--pink)]'>Subtítulo del articulo del Blog</h3>
-        <p className='px-10 py-5 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-        <p className='px-10 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-        <p className='px-10 pt-5 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-        <Link to="/Blog" className="flex mx-auto mt-20 text-white text-sm font-black bg-[var(--primary)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
+        <img src={`${import.meta.env.VITE_API_URL}/blog/image/${article.image}`} className="p-10" alt="" />
+       <p className='px-10 text-[var(--primary)]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+        <Link to="/Blog" className="flex mx-auto mt-10 text-white text-sm font-black bg-[var(--primary)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl">
           Volver
         </Link>
       </div>
