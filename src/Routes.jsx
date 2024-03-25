@@ -37,12 +37,12 @@ const RoutesComponent = () => {
         />
         <Route path="/Articulo/:id" element={<Articulo />} />
         <Route path="*" element={<Page_404 />}></Route>
-        <Route path="/Perfil" element={<Perfil />} />
-            <Route path="/Perfil/Misresultados" element={<Misresultados />} />
-            <Route path="/Perfil/ActualizarPerfil" element={<ActualizarPerfil />} />
-            <Route path="/Perfil/CambiarPassword" element={<CambiarPassword />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/Diagnostico" element={<Diagnostico />} />
+          <Route path="/Resultado" element={<Resultado />} />
           <Route path="/Perfil/*" element={<Perfil/>} />
         </Route>
+
         <Route element={<AdminRoutes />}>
           <Route path="/Administrador" element={<PerfilAdministrador />} />
           <Route path="/NuevaPregunta" element={<CrearPregunta />} />
