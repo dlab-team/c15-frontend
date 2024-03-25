@@ -17,6 +17,7 @@ import ActualizarPerfil from './Views/ActualizarPerfil';
 import PrivateRoutes from './guards/PrivateRoutes';
 import AdminRoutes from './guards/AdminRoutes';
 import PerfilAdministrador from './Views/PerfilAdministrador';
+import CrearPregunta from './Views/CrearPregunta';
 import PreguntaAdmin from './Views/PreguntaAdmin';
 import VistaFormBlog from './Views/VistaFormBlog';
 
@@ -48,6 +49,7 @@ const RoutesComponent = () => {
         </Route>
         <Route element={<AdminRoutes />}>
           <Route path="/Administrador" element={<PerfilAdministrador />} />
+          <Route path="/NuevaPregunta" element={<CrearPregunta />} />
           <Route path="/Administrador/Blog/Editar/:id" element={<VistaFormBlog />} />
           <Route path="/Administrador/Blog/Crear" element={<VistaFormBlog />} />
         </Route>
