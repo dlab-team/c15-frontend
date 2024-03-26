@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import QuestionEdit from '../components/QuestionEdit';
+import QuestionEdit from '../../components/QuestionEdit';
 
 function PreguntaAdmin() {
   return (

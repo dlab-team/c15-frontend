@@ -5,8 +5,7 @@ import LogoDesktop from '../assets/img/Logo-Desktop.png';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import HeaderClient from './HeaderClient';
-import HeaderDefault from './HeaderDefault';
+import HeaderAdmin from './HeaderAdmin';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,21 +66,7 @@ const Header = () => {
       </div>
       </div>
       <div>
-      {
-        userData && userData.role_id === 1 && (
-          <HeaderClient cerrarSesion={cerrarSesion} isOpen={isOpen} setIsOpen={setIsOpen} closeNav={closeNav}/>
-        )
-      }
-      {
-        userData && userData.role_id === 2 && (
-          <HeaderClient cerrarSesion={cerrarSesion} isOpen={isOpen} setIsOpen={setIsOpen} closeNav={closeNav}/>
-        )
-      }
-      {
-        !userData &&(
-          <HeaderDefault isOpen={isOpen} setIsOpen={setIsOpen} closeNav={closeNav} />
-        )
-      }
+          <HeaderAdmin cerrarSesion={cerrarSesion} isOpen={isOpen} setIsOpen={setIsOpen} closeNav={closeNav}/>        
       </div>
     </div>
   );
