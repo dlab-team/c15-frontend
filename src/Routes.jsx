@@ -14,10 +14,10 @@ import Perfil from './Views/Perfil'
 import PrivateRoutes from './guards/PrivateRoutes';
 import AdminRoutes from './guards/AdminRoutes';
 import PerfilAdministrador from './Views/PerfilAdministrador';
+import Pilares from './Views/Pilares';
 import CrearPregunta from './Views/CrearPregunta';
 import PreguntaAdmin from './Views/PreguntaAdmin';
 import VistaFormBlog from './Views/VistaFormBlog';
-
 
 const RoutesComponent = () => {
   return (
@@ -41,6 +41,7 @@ const RoutesComponent = () => {
         </Route>
         <Route element={<AdminRoutes />}>
           <Route path="/Administrador" element={<PerfilAdministrador />} />
+          <Route path="/Pilares" element={<Pilares />}/>
           <Route path="/NuevaPregunta" element={<CrearPregunta />} />
           <Route path="/Administrador/Blog/Editar/:id" element={<VistaFormBlog />} />
           <Route path="/Administrador/Blog/Crear" element={<VistaFormBlog />} />
