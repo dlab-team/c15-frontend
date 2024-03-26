@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import OptionsValues from "../components/OptionsValues";
-import AuthContext from "../context/Context";
+import OptionsValues from "../../components/OptionsValues";
+import AuthContext from "../../context/Context";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';

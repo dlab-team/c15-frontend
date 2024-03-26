@@ -22,7 +22,7 @@ const Login = () => {
         delete userData.password;
         storeUser(userData)
         if(userData.role_id === 2){
-          navigate("/Administrador")
+          navigate("/Admin")
         }else{
           navigate("/")
         }

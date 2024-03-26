@@ -1,8 +1,14 @@
+import { Link } from 'react-router-dom'
+import edit from '../assets/img/Edit.svg'
+import trash from '../assets/img/trash.svg'
 import { FormatDate } from '../helpers/FormatDate';
+import AuthContext from '../context/Context';
+import { useContext } from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const CardBlog = ({ article }) => {
+    const { userData } = useContext(AuthContext);
     const { id, title, image, content, author, } = article
     const formattedDate = FormatDate(article.createdAt);
 
@@ -51,6 +57,14 @@ const CardBlog = ({ article }) => {
                     <p>Autor del artículo: {author}</p>
                     <p>Fecha de publicación: {formattedDate}</p>
                 </div>
+                    <div className="flex gap-2">
+                        <Link onClick={() => deleteArticle(article)}>
+                            <img src={trash} alt="Delete blog" className="w-8 hover:bg-[var(--secondary)] duration-300 p-1 border rounded-md" />
+                        </Link>
+                        <Link to={`/Admin/Blog/Editar/${id}`}>
+                            <img src={edit} alt="Edit blog" className="w-8 hover:bg-[var(--secondary)] duration-300 p-1 border rounded-md" />
+                        </Link>
+                    </div>
             </div>
         </div >
     )
