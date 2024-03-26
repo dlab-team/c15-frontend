@@ -7,8 +7,8 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
     <div>
         {/*menu desktop */}
       <div className="hidden lg:flex w-[100%] justify-between items-center px-5 gap-5">
-        <Link to="/" className="flex gap-3 items-center text-[var(--primary)] font-black px-2">
-          Pilar{" "}<FontAwesomeIcon icon={faAngleRight} />
+        <Link to="/Pilares" className="flex gap-3 items-center text-[var(--primary)] font-black px-2">
+          Pilares{" "}<FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link to="/Blog" className="flex gap-3 items-center text-[var(--primary)] font-black">
           Blog{" "}<FontAwesomeIcon icon={faAngleRight} />
@@ -74,18 +74,11 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
         </button>
         <div className="w-[100%]">
           <Link
-            to="/"
+            to="/Pilares"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            Home <FontAwesomeIcon icon={faAngleRight} />
-          </Link>
-          <Link
-            to="/Diagnostico"
-            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
-            onClick={closeNav}
-          >
-            Diagnóstico <FontAwesomeIcon icon={faAngleRight} />
+            Pilares <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
             to="/Blog"
@@ -95,11 +88,18 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
             Blog <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
-            to="mailto:contacto@lofwork.cl"
+            to="/"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            Contacto <FontAwesomeIcon icon={faAngleRight} />
+            Encuesta <FontAwesomeIcon icon={faAngleRight} />
+          </Link>
+          <Link
+            to="/"
+            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
+            onClick={closeNav}
+          >
+            Usuarios <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
             to="/Perfil"

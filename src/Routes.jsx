@@ -19,6 +19,7 @@ import ActualizarPerfil from './Views/ActualizarPerfil'
 import PrivateRoutes from './guards/PrivateRoutes';
 import AdminRoutes from './guards/AdminRoutes';
 import PerfilAdministrador from './Views/PerfilAdministrador';
+import Pilares from './Views/Pilares';
 
 const RoutesComponent = () => {
   
@@ -37,12 +38,10 @@ const RoutesComponent = () => {
           <Route path="/Diagnostico" element={<Diagnostico />} />
           <Route path="/Resultado" element={<Resultado />} />
           <Route path="/Perfil" element={<Perfil />} />
-            <Route path="/Perfil/Misresultados" element={<Misresultados />} />
-            <Route path="/Perfil/ActualizarPerfil" element={<ActualizarPerfil />} />
-            <Route path="/Perfil/CambiarPassword" element={<CambiarPassword />} />
         </Route>
         <Route element={<AdminRoutes/>}>
           <Route path="/Administrador" element={<PerfilAdministrador />} />
+          <Route path="/Pilares" element={<Pilares />}/>
         </Route>
       </Routes>
       <Footer />
