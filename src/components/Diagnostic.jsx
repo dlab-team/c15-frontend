@@ -4,7 +4,7 @@ import AuthContext from '../context/Context';
 import Pillar from './Pillar';
 import { Suspense } from 'react';
 import { fetchData } from '../fetchData';
-import { Link } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 //  peticion questionario y usuario
 const apiData = fetchData(`${import.meta.env.VITE_API_URL}/questionnarie`);
@@ -18,6 +18,7 @@ const Diagnostic = () => {
       : null;
   const [pillars, setPillars] = useState([]);
   const data = apiData.read();
+  const navigate = useNavigate()
 
   useEffect(() => {
     setPillars(data);
@@ -80,6 +81,9 @@ const Diagnostic = () => {
       body: JSON.stringify(requestBody),
     })
       .then((response) => response.json())
+      .then((data) => {
+        navigate("/Resultado")
+      })
       // .then((data) => {
       //   console.log(data);
       // })
@@ -156,7 +160,7 @@ const Diagnostic = () => {
         </button>
       </div>
       {actualPage === totalPages && (
-        <Link to="/Resultado">
+        
           <button
             className="flex mx-auto mt-20 text-white text-sm font-black bg-[var(--pink)] border-0 py-2 px-7 rounded-full uppercase max-sm:font-black max-sm:text-sm md:text-xl"
             onClick={() => {
@@ -165,10 +169,11 @@ const Diagnostic = () => {
           >
             Enviar encuesta
           </button>
-        </Link>
+        
       )}
     </div>
   );
 };
 
 export default Diagnostic;
+
