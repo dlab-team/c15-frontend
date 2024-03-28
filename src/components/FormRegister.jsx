@@ -36,7 +36,7 @@ const FormRegister = () => {
 
     postUser
       .then((message) => {
-        Swal.fire('¡Éxito, los datos se enviaron!', message, 'success');
+        Swal.fire('¡Se te enviará un correo electrónico para activar tu cuenta!', message, 'success');
       })
       .catch((errorMessage) => {
         Swal.fire('Error, vuelve a intentarlo', errorMessage, 'error');

@@ -8,6 +8,7 @@ import Blog from './Views/Blog';
 import AdminBlog from './Views/Admin/AdminBlog';
 import Login from './Views/Login';
 import Registro from './Views/Registro';
+import ActivarCuenta from './Views/ActivarCuenta';
 import RestablecerContrasena from './Views/RestablecerContrasena';
 import Articulo from './Views/Articulo';
 import Page_404 from './Views/Page_404';
@@ -45,6 +46,7 @@ const RoutesComponent = () => {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
+        <Route path="/ActivarCuenta" element={<ActivarCuenta />} />
         <Route path="/RestablecerContrasena" element={<RestablecerContrasena />} />
         <Route path="/Articulo/:id" element={<Articulo />} />
         <Route path="*" element={<Page_404 />} />
