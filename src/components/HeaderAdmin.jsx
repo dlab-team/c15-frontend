@@ -1,54 +1,61 @@
-import { Link, NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
+const HeaderAdmin = ({ cerrarSesion, isOpen, setIsOpen, closeNav }) => {
   return (
     <div>
-        {/*menu desktop */}
+      {/*menu desktop */}
       <div className="hidden lg:flex w-[100%] justify-between items-center px-5 gap-5">
-        <Link to="/" className="flex gap-3 items-center text-[var(--primary)] font-black px-2">
-          Pilar{" "}<FontAwesomeIcon icon={faAngleRight} />
-        </Link>
-        <Link to="/Blog" className="flex gap-3 items-center text-[var(--primary)] font-black">
-          Blog{" "}<FontAwesomeIcon icon={faAngleRight} />
+        <Link
+          to="/Admin/Resultados"
+          className="flex gap-3 items-center text-[var(--primary)] font-black px-2"
+        >
+          Resultados <FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
-          to="/Diagnostico"
-          className="flex gap-3 items-center text-[var(--primary)] font-black"
-        >Encuesta{" "}<FontAwesomeIcon icon={faAngleRight} />
+          to="/Admin/Pilares"
+          className="flex gap-3 items-center text-[var(--primary)] font-black px-2"
+        >
+          Pilares <FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
-          to="mailto:contacto@lofwork.cl"
+          to="/Admin/Blog"
           className="flex gap-3 items-center text-[var(--primary)] font-black"
         >
-          Usuarios{" "}<FontAwesomeIcon icon={faAngleRight} />
+          Blog <FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
-          to="/Perfil"
+          to="/Admin/Diagnostico"
           className="flex gap-3 items-center text-[var(--primary)] font-black"
-        >Perfil{" "}<FontAwesomeIcon icon={faAngleRight} />
+        >
+          Diagnostico <FontAwesomeIcon icon={faAngleRight} />
+        </Link>
+        <Link
+          to="/Admin/Usuarios"
+          className="flex gap-3 items-center text-[var(--primary)] font-black"
+        >
+          Usuarios <FontAwesomeIcon icon={faAngleRight} />
         </Link>
         <Link
           onClick={cerrarSesion}
           className="w-[150px] h-[40px] justify-center items-center flex bg-[var(--pink)] rounded-3xl border-2 border-[var(--pink)] text-white"
         >
           Cerrar Sesion
-        </Link> 
+        </Link>
         <Link
           to="/"
-          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--secondary)] rounded-3xl border-2 border-[var(--pink)] text-[var(--pink)]">
+          className="w-[100px] h-[40px] justify-center items-center flex bg-[var(--secondary)] rounded-3xl border-2 border-[var(--pink)] text-[var(--pink)]"
+        >
           Home
         </Link>
-        
-        
       </div>
       {/*menu mobile */}
       <div
         className={
           isOpen
-            ? 'lg:hidden bg-[var(--primary)] w-[180px] h-[80vh] absolute top-0 right-0 flex flex-col items-center justify-arround rounded-[0px_0px_0px_25px] z-30'
-            : 'hidden'
+            ? "lg:hidden bg-[var(--primary)] w-[180px] h-[80vh] absolute top-0 right-0 flex flex-col items-center justify-arround rounded-[0px_0px_0px_25px] z-30"
+            : "hidden"
         }
       >
         <button
@@ -74,18 +81,11 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
         </button>
         <div className="w-[100%]">
           <Link
-            to="/"
+            to="Admin/Pilares"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            Home <FontAwesomeIcon icon={faAngleRight} />
-          </Link>
-          <Link
-            to="/Diagnostico"
-            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
-            onClick={closeNav}
-          >
-            Diagnóstico <FontAwesomeIcon icon={faAngleRight} />
+            Pilares <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
             to="/Blog"
@@ -95,11 +95,18 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
             Blog <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
-            to="mailto:contacto@lofwork.cl"
+            to="/"
             className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
             onClick={closeNav}
           >
-            Contacto <FontAwesomeIcon icon={faAngleRight} />
+            Encuesta <FontAwesomeIcon icon={faAngleRight} />
+          </Link>
+          <Link
+            to="/"
+            className="w-[100%] p-4 text-center text-white text-xl flex justify-between items-center hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
+            onClick={closeNav}
+          >
+            Usuarios <FontAwesomeIcon icon={faAngleRight} />
           </Link>
           <Link
             to="/Perfil"
@@ -110,17 +117,19 @@ const HeaderAdmin = ({cerrarSesion, isOpen, setIsOpen, closeNav}) => {
           </Link>
         </div>
         <div className="w-[100%] flex flex-col items-center mt-10 gap-3">
-         <Link
+          <Link
             className="w-[80%] p-3 text-center rounded-3xl border-2 border-white text-white text-lg font-black items-center bg-[var(--pink)] hover:bg-[var(--secondary)] hover:text-[var(--pink)]"
-            onClick={() => { closeNav(); cerrarSesion(); }}
+            onClick={() => {
+              closeNav();
+              cerrarSesion();
+            }}
           >
             Cerrar Sesion
           </Link>
-          
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderAdmin
+export default HeaderAdmin;

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import FormBlog from "../components/FormBlog";
+import FormBlog from "../../components/FormBlog";
 
 const EditarBlog = () => {
     const params = useParams();

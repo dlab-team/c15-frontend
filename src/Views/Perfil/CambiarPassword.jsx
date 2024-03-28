@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import AuthContext from "../context/Context"
+import AuthContext from "../../context/Context"
 import Swal from 'sweetalert2';
 
 const CambiarPassword = () => {
