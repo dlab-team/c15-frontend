@@ -74,7 +74,9 @@ const Articulo = () => {
         <div className='px-10 py-5 text-[var(--primary)] w-full'>
           {
             article.content ? (
-              <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              <div dangerouslySetInnerHTML={{ __html: article.content }}>
+              {/* {console.log(article.content)} */}
+              </div>
             ) : (
               <h1>Cargando contenido</h1>
             )

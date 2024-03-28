@@ -1,36 +1,8 @@
 import { FormatDate } from '../helpers/FormatDate';
-import Swal from 'sweetalert2';
-import axios from 'axios';
 
 const CardBlog = ({ article }) => {
     const { id, title, image, content, author, } = article
     const formattedDate = FormatDate(article.createdAt);
-
-    const deleteArticle = article => {
-        Swal.fire({
-            title: `¿Deseas eliminar el artículo?`,
-            html: `Eliminarás el articulo <b>${article.title}</b>`,
-            icon: 'warning',
-            showCancelButton: true,
-            cancelButtonColor: '#3085d6',
-            confirmButtonColor: '#d33',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: '¡Sí, quiero eliminar!',
-            reverseButtons: false
-        })
-            .then(result => {
-                if (result.isConfirmed) {
-                    axios.delete(`${import.meta.env.VITE_API_URL}/blog/${article.id}`)
-                        .then(resp => {
-                            Swal.fire(
-                                'Artículo eliminado',
-                                `El artículo fue eliminado satisfactoriamente`,
-                                'success'
-                            ).then(() => { window.location.reload() })
-                        }).catch(err => console.log(err))
-                }
-            })
-    }
 
     return (
         <div key={id} className="border-2 border-[var(--secondary)] w-[95%] mx-auto my-4 shadow-lg h-[92%]">
@@ -44,7 +16,7 @@ const CardBlog = ({ article }) => {
             </div>
             <div className="pt-1 pb-3 px-4">
                 <h2 className="py-4 font-extrabold uppercase text-[var(--pink)]">{title}</h2>
-                <p className="text-sm line-clamp-3">{content}</p>
+                <div className="text-sm line-clamp-3" dangerouslySetInnerHTML={{ __html: content }} />
             </div>
             <div className="flex justify-between mx-4 mb-3">
                 <div className="text-xs text-gray-500">

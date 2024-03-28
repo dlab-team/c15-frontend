@@ -5,6 +5,7 @@ import AuthContext from "../context/Context";
 import Swal from "sweetalert2";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { Toolbar } from '../helpers/Toolbar.js'
 
 const FormBlog = () => {
     const params = useParams();
@@ -150,6 +151,9 @@ const FormBlog = () => {
                     onChange={setContent}
                     style={{ height: "100%" }}
                     placeholder="Escribe el contenido del artículo..."
+                    modules={{
+                        toolbar: Toolbar // Usa tu archivo toolbarOptions.js aquí
+                    }}
                 />
             </div>
             <label className="text-sm pl-2 mt-3">Archivo</label>
