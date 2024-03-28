@@ -25,6 +25,8 @@ import VistaFormBlog from './Views/Admin/VistaFormBlog';
 import AdminResultados from './Views/Admin/AdminResultados';
 import AdminUsuarios from './Views/Admin/AdminUsuarios';
 import AdminDiagnostico from './Views/Admin/AdminDiagnostico';
+import CrearPilar from './Views/Admin/CrearPilar';
+import EditarPilar from './Views/Admin/EditarPilar'
 
 const RoutesComponent = () => {
   return (
@@ -83,6 +85,8 @@ const RoutesComponent = () => {
           <Route path="/Admin/Resultados" element={<AdminResultados />} />
           <Route path="/Admin/Usuarios" element={<AdminUsuarios />} />
           <Route path="/Admin/Diagnostico" element={<AdminDiagnostico />} />
+          <Route path="/Admin/CrearPilar" element={<CrearPilar />} />
+          <Route path="/Admin/EditarPilar/:id" element={<EditarPilar />} />
           
         </Route>
       </Routes>
