@@ -3,6 +3,9 @@ import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import AuthContext from "../context/Context";
 import Swal from "sweetalert2";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { Toolbar } from '../helpers/Toolbar.js'
 
 const FormBlog = () => {
     const params = useParams();
@@ -13,6 +16,7 @@ const FormBlog = () => {
     const [author, setAuthor] = useState("");
     const [imageFile, setImageFile] = useState(null);
     const [imageURL, setImageURL] = useState("");
+
 
     useEffect(() => {
         if (params.id) {
@@ -29,7 +33,7 @@ const FormBlog = () => {
                     console.log(err)
                 })
         }
-    }, [params.id])
+    }, [])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -139,16 +143,20 @@ const FormBlog = () => {
                 required
             />
             <label className="text-sm pl-2">Contenido del artículo</label>
-            <textarea
-                rows="5"
-                name="content"
-                className="mb-3 pl-4 rounded-lg border-2 border-gray-500 shadow-md"
-                placeholder="Cuerpo del artículo"
-                value={content}
-                onChange={e => setContent(e.target.value)}
-                required
-            />
-            <label className="text-sm pl-2">Archivo</label>
+            <div className="h-48 pb-11">
+                <ReactQuill
+                    theme="snow"
+                    name="content"
+                    value={content}
+                    onChange={setContent}
+                    style={{ height: "100%" }}
+                    placeholder="Escribe el contenido del artículo..."
+                    modules={{
+                        toolbar: Toolbar // Usa tu archivo toolbarOptions.js aquí
+                    }}
+                />
+            </div>
+            <label className="text-sm pl-2 mt-3">Archivo</label>
             <input type="file" onChange={e => setImageFile(e.target.files[0])} />
             <p className="mb-5 text-[var(--primary)] text-xs text-red-600 mt-2 pl-2"><b>Por favor, asegúrate de que la imagen seleccionada tenga un tamaño máximo de 1MB.</b></p>
             <div className="mt-2 mb-6 max-w-[50%] mx-auto">
