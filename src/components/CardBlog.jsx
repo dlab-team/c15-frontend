@@ -50,7 +50,7 @@ const CardBlog = ({ article }) => {
             </div>
             <div className="pt-1 pb-3 px-4">
                 <h2 className="py-4 font-extrabold uppercase text-[var(--pink)]">{title}</h2>
-                <p className="text-sm">{content}</p>
+                <p className="text-sm line-clamp-3">{content}</p>
             </div>
             <div className="flex justify-between mx-4 mb-3">
                 <div className="text-xs text-gray-500">
