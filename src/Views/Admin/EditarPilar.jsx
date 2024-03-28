@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import {  useNavigate, useParams } from 'react-router-dom';
+import {  Link, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
@@ -14,13 +14,12 @@ const EditarPilar = () => {
     try {
       const response = await axios.put(`${import.meta.env.VITE_API_URL}/pillar/${params.id}`, {"name": pilarEditado})
       const data = response.data
-      setPilarEditado(" ")
+      setPilarEditado("")
       Swal.fire({
         icon: 'success',
         title: '¡Éxito!',
         text: 'Pillar editado exitosamente 😀.',
       });
-      navigate("/Admin/Pilares")
     } catch (error) {
       Swal.fire({
         icon: 'warning',
@@ -36,6 +35,7 @@ const EditarPilar = () => {
             <h2 className='text-2xl text-[var(--pink)] font-bold'>Nombre del Pilar</h2>
             <input type="text" name="nombre_pillar" value={pilarEditado} placeholder='Ingresa el nombre' className="w-[60%] my-5 pl-2 rounded-lg border-2 border-gray-500 shadow-md" required onChange={(e) => setPilarEditado(e.target.value)}/>
             <button type="submit" className="mt-5 bg-[var(--pink)] py-3 px-10 rounded-3xl shadow-lg text-white font-medium hover:bg-[var(--secondary)] hover:text-[var(--pink)] hover:duration-300  md:w-[30%] md:mx-auto">Guardar</button>
+            <Link to="/Admin/Pilares" className="mt-5 text-center bg-[var(--secondary)] py-3 px-10 rounded-3xl shadow-lg text-[var(--primary)] font-medium hover:bg-[var(--pink)] hover:text-[var(--white)] hover:duration-300  md:w-[30%] md:mx-auto">Volver</Link>
         </form>
     </div>
   )
